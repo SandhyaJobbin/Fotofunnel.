@@ -2644,18 +2644,18 @@
         // Level 1 Questions (Easy - Clear violations/approvals)
         const level1Questions = [
             {
-                image: `<img src="https://images.pexels.com/photos/3214160/pexels-photo-3214160.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
-                scenario: "A guest shared this photo of the pasta we served. It looks accurate and appetising. It was reported, but I think it is perfectly fine.",
+                image: `<img src="https://daileyfoods.com/wp-content/uploads/2024/05/4-1024x1024.png" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
+                scenario: "A guest shared this photo of the food we served. It looks accurate and appetising. It was reported, but I think it is perfectly fine.",
                 tip: "Decide whether a normal traveller would expect to see this on a listing.",
                 correct: "publish",
-                policy: "",
+                policy: "Publish",
                 correctExplanation: "Correct. This is legitimate content that meets the guidelines, so it can stay published.",
                 wrongExplanations: { remove: "This does not break any policy. Removing it would take down valid, genuine content.", escalate: "No need to escalate. This is clearly acceptable and can simply be published." },
                 lifelines: { hint: "Decide whether a normal traveller would expect to see this on a listing.", eliminate: "remove", expert: "Would an ordinary traveller expect to see this on a listing? If yes, it can be published." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/18285946/pexels-photo-18285946.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
-                scenario: "I own this cafe. A guest photo of our counter is so dark and blurry you cannot tell what it shows. It misrepresents us.",
+                image: `<img src="https://media.gettyimages.com/id/1796981245/photo/close-up-of-a-camera-screen-recording-a-fitness-man-blogging-at-home.jpg?s=612x612&w=gi&k=20&c=-LhOW-GFV_IqcHiQOUNG--xpFxLfJlFtaX1MBqSRNBE=" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                scenario: "I own this hotel. Please review the image and remove it if it.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Photo Quality",
@@ -2664,8 +2664,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/576324/pexels-photo-576324.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
-                scenario: "This is not a guest photo. Someone posted a flyer advertising their own taxi service on our hotel listing.",
+                image: `<img src="https://www.bhphotovideo.com/images/images750x750/datavideo_tg_200_video_production_teacher_s_guide_1672882.jpg" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                scenario: "I’m reporting this image because it is not appropriate for my business listing.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Commercial",
@@ -2674,8 +2674,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Commercial." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/695193/pexels-photo-695193.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
-                scenario: "The exact same photo of our lobby has been uploaded eight times by one account. Reporting the duplicates.",
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3erHsSjGZMWGAE2J_trlK-oQ2vXiJOVmpQ&s" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
+                scenario: "Please review and remove the image from my listing.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Duplicate",
@@ -2684,8 +2684,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Duplicate." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
-                scenario: "A photo on our property page appears to show guests using illegal drugs on the balcony. Reporting this straight away.",
+                image: `<img src="https://tse3.mm.bing.net/th/id/OIP.jS8_G9xwwuurwj2j88dmugAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
+                scenario: "It appears blurry and does not accurately represent my business. Please review.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Illegal Activity",
@@ -2694,8 +2694,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Illegal Activity." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/8287652/pexels-photo-8287652.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
-                scenario: "Someone posted a photo of their pet cat on our restaurant listing. It has nothing to do with our venue.",
+                image: `<img src="https://t4.ftcdn.net/jpg/10/13/31/37/360_F_1013313738_o0YNG8h28wDywjfUsr1U5fV6rl5Z9dML.jpg" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
+                scenario: "I’m reporting this photo because it is misleading and appears to show a ghost.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Irrelevant",
@@ -2704,8 +2704,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Irrelevant." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/7245/pexels-photo-7245.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
-                scenario: "This is a stock landscape photo that was not taken at our resort. It is misleading and not original.",
+                image: `<img src="https://images.template.net/405235/Hotel-Service-Banner-Template-edit-online.png" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
+                scenario: "I’m reporting this photo because it is not related to my business or the services we provide.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Non-Original",
@@ -2714,8 +2714,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Non-Original." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/1370719/pexels-photo-1370719.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
-                scenario: "A guest's face is clearly identifiable in this photo and they did not agree to it being posted. Reporting for privacy.",
+                image: `<img src="https://travelution.media/_next/image?url=%2Fpanel-content%2Fuploads%2F2026%2F4%2FDSC04577.jpg&w=3840&q=75" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
+                scenario: "Our staff photo plantation is being used in a way to represent our business.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Privacy",
@@ -2724,8 +2724,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Privacy." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/34330566/pexels-photo-34330566.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
-                scenario: "There is a disturbing, graphic image posted to our venue page. It is upsetting for guests to see.",
+                image: `<img src="https://www.monderlaw.com/wp-content/uploads/2024/04/What-is-a-felony-drug-charge-in-California.jpg" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
+                scenario: "This image is misleading because the product shown is not sold or offered at our hotel.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Graphic",
@@ -2734,8 +2734,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Graphic." }
             },
             {
-                image: `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='420'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%231f1730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23sg)'/%3E%3Cpath d='M300 178 v-16 a20 20 0 0 1 40 0 v16' fill='none' stroke='%23c9a6e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='284' y='178' width='72' height='56' rx='10' fill='%23c9a6e8'/%3E%3Ccircle cx='320' cy='204' r='6' fill='%23241a35'/%3E%3Crect x='317' y='204' width='6' height='14' rx='2' fill='%23241a35'/%3E%3Ctext x='320' y='268' font-family='Arial, sans-serif' font-weight='700' font-size='24' fill='%23efe3fb' text-anchor='middle'%3EContent Flagged%3C/text%3E%3Ctext x='320' y='296' font-family='Arial, sans-serif' font-size='14' fill='%23c9a6e8' text-anchor='middle' opacity='0.9'%3EAdult content %C2%B7 policy review%3C/text%3E%3C/svg%3E" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
-                scenario: "Explicit adult content was uploaded to our family restaurant listing. Reporting it right away.",
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT6-e6DWnfH8Y0DnLEwFuORNN-9lkXSw-_wQ&s" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
+                scenario: "This photo was posted by a group of friends",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Sexually Explicit",
@@ -2748,8 +2748,8 @@
         // Level 2 Questions (Intermediate - Requires more thought)
         const level2Questions = [
             {
-                image: `<img src="https://images.pexels.com/photos/7552316/pexels-photo-7552316.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Escalate content" loading="lazy" data-cat="escalate" onerror="handleImgError(this)">`,
-                scenario: "A post on our page references a legal threat and a trademark dispute. This is beyond me, please have an expert review it.",
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzhDTHC_T8DwFYkt9buStDNMtZiN3blDtLNA&s" alt="Escalate content" loading="lazy" data-cat="escalate" onerror="handleImgError(this)">`,
+                scenario: "It could mislead customers about our business and should be removed from the listing.",
                 tip: "Decide whether this needs a specialist rather than a routine action.",
                 correct: "escalate",
                 policy: "",
@@ -2758,7 +2758,7 @@
                 lifelines: { hint: "Decide whether this needs a specialist rather than a routine action.", eliminate: "publish", expert: "Is this beyond a routine keep or remove decision? If so, escalate it." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/18285946/pexels-photo-18285946.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                image: `<img src="https://img.freepik.com/premium-photo/abstract-art-piece-symbolizing-gender-equality_950002-645321.jpg" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
                 scenario: "This photo of our hotel room is completely out of focus. I do not think such low quality images should stay on our page.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2768,8 +2768,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/576324/pexels-photo-576324.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
-                scenario: "A competitor uploaded a promotional poster with prices and a phone number to our page. This is advertising, not a real photo.",
+                image: `<img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/free-medical-camp-design-template-b6101353f0605b9179200e35e650d2e5_3a1b14bb-28e0-4b9c-9c1d-7e9789b9f8b6_screen.webp?ts=1777953527" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                scenario: "A competitor uploaded a promotional poster. This is advertising, not a real photo.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Commercial",
@@ -2778,8 +2778,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Commercial." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/695193/pexels-photo-695193.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
-                scenario: "This identical pool picture keeps getting posted again and again on our listing. Please clean up the duplicates.",
+                image: `<img src="https://tse3.mm.bing.net/th/id/OIP.4xu5HAzp-NgO-37K11oGLgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
+                scenario: "it is unrelated to our hotel and does not represent our property or services.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Duplicate",
@@ -2788,8 +2788,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Duplicate." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
-                scenario: "This image posted to our bar listing shows what looks like drug paraphernalia on the table. Please review and remove.",
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvV5lenlbRd7u_ksuQOAhugiuoErBv-OObLg&s" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
+                scenario: " Please review and remove.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Illegal Activity",
@@ -2798,8 +2798,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Illegal Activity." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/8287652/pexels-photo-8287652.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
-                scenario: "There is a random picture of a parked car on our hotel page. It is completely unrelated to us.",
+                image: `<img src="https://www.paperchase.ac/wp-content/uploads/2025/04/mature-caucasian-ceo-businessman-leader-with-diver-2025-03-31-12-13-34-utc-1-1024x683.jpg" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
+                scenario: "There is a random picture. It is completely unrelated to us.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Irrelevant",
@@ -2808,7 +2808,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Irrelevant." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/7245/pexels-photo-7245.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
+                image: `<img src="https://images.ctfassets.net/x1xkqhj4w3lh/25ceb677-0983-4dba-8703-5a1b8ce46f42/7e1cf83098bb9571f45a5e24026b3886/img-fill-hudson-central.jpg" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
                 scenario: "The image has another website's watermark on it and was clearly not shot at our hotel.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2818,8 +2818,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Non-Original." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/1370719/pexels-photo-1370719.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
-                scenario: "This image shows a bystander's face in close-up with no consent to be posted. Please remove it for privacy reasons.",
+                image: `<img src="https://i.guim.co.uk/img/media/9e83c7c6df63b253b24b7cb0043122556d2d596a/0_136_3500_2100/master/3500.jpg?width=445&dpr=1&s=none&crop=none" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
+                scenario: "This image shows a face in close-up with no consent to be posted.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Privacy",
@@ -2828,8 +2828,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Privacy." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/34330566/pexels-photo-34330566.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
-                scenario: "A violent, bloody photo was uploaded to our restaurant listing. Please take it down immediately.",
+                image: `<img src="https://embedsocial.com/wp-content/uploads/2021/09/positive-review-examples-hero-768x401.jpg" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
+                scenario: "A violent, bloody photo was uploaded to our restaurant listing.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Graphic",
@@ -2838,8 +2838,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Graphic." }
             },
             {
-                image: `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='420'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%231f1730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23sg)'/%3E%3Cpath d='M300 178 v-16 a20 20 0 0 1 40 0 v16' fill='none' stroke='%23c9a6e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='284' y='178' width='72' height='56' rx='10' fill='%23c9a6e8'/%3E%3Ccircle cx='320' cy='204' r='6' fill='%23241a35'/%3E%3Crect x='317' y='204' width='6' height='14' rx='2' fill='%23241a35'/%3E%3Ctext x='320' y='268' font-family='Arial, sans-serif' font-weight='700' font-size='24' fill='%23efe3fb' text-anchor='middle'%3EContent Flagged%3C/text%3E%3Ctext x='320' y='296' font-family='Arial, sans-serif' font-size='14' fill='%23c9a6e8' text-anchor='middle' opacity='0.9'%3EAdult content %C2%B7 policy review%3C/text%3E%3C/svg%3E" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
-                scenario: "There is a nude, clearly sexual photo on our hotel page. Please remove it as soon as possible.",
+                image: `<img src="https://intensedebate.com/images/screenshots/intensedebate-screenshot.jpg" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
+                scenario: "Not related to us, Please remove it as soon as possible.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Sexually Explicit",
@@ -2852,18 +2852,18 @@
         // Level 3 Questions (Critical - Complex scenarios requiring deep analysis)
         const level3Questions = [
             {
-                image: `<img src="https://images.pexels.com/photos/3584338/pexels-photo-3584338.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
-                scenario: "A traveller posted this skyline view from our rooftop. Flagged by someone, but it is an accurate, publishable photo.",
+                image: `<img src="https://researchmethod.net/wp-content/uploads/2022/08/Research_Findings.jpg" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
+                scenario: "A traveller posted this Flagged by someone, but it is an accurate.",
                 tip: "Decide whether a normal traveller would expect to see this on a listing.",
                 correct: "publish",
-                policy: "",
+                policy: "Publish",
                 correctExplanation: "Correct. This is legitimate content that meets the guidelines, so it can stay published.",
                 wrongExplanations: { remove: "This does not break any policy. Removing it would take down valid, genuine content.", escalate: "No need to escalate. This is clearly acceptable and can simply be published." },
                 lifelines: { hint: "Decide whether a normal traveller would expect to see this on a listing.", eliminate: "remove", expert: "Would an ordinary traveller expect to see this on a listing? If yes, it can be published." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/18285946/pexels-photo-18285946.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
-                scenario: "Reporting a photo on our restaurant listing. It is grainy and washed out, you cannot make out the dish at all.",
+                image: `<img src="https://houklawfirm.com/wp-content/uploads/2025/07/Three-Types-of-Protection-for-Workplace-Whistleblowers-in-Phoenix-AZ.jpg" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                scenario: "This is not related to us.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Photo Quality",
@@ -2872,8 +2872,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/576324/pexels-photo-576324.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
-                scenario: "Someone keeps posting a marketing banner for their tour company on our attraction listing. Please remove this commercial spam.",
+                image: `<img src="https://tse2.mm.bing.net/th/id/OIP.gQdKpvt79OHYBhG2TRUCAAHaEO?pid=ImgDet&w=191&h=109&c=7&o=7&rm=3" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                scenario: "not accurately represent our property or services.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Commercial",
@@ -2882,8 +2882,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Commercial." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/695193/pexels-photo-695193.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
-                scenario: "Same image, posted repeatedly on our page by the same user. Reporting it as duplicate spam.",
+                image: `<img src="https://etimg.etb2bimg.com/thumb/msid-97650744,imgsize-26640,width-1200,height=627,overlay-etgovernment,resizemode-75/news/governance/delhi-police-join-hands-with-meta-to-run-awareness-campaign-against-online-harassment.jpg" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
+                scenario: "Same image, posted repeatedly on our page by someone.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Duplicate",
@@ -2892,7 +2892,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Duplicate." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCYF-AN5YBm1SxUvBMsL5DgStD8ouFnAe-Me5ocYychgGcHBnLJXGzGr7&s=10" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
                 scenario: "Reporting a guest photo that clearly depicts illegal substance use at our venue. This should not be on our page.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2902,8 +2902,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Illegal Activity." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/8287652/pexels-photo-8287652.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
-                scenario: "A user uploaded a photo that has nothing to do with our attraction. Reporting it as irrelevant.",
+                image: `<img src="https://www.eci.gov.in/newimg/ict-apps/screenshots/web-apps/results-trends-tv/cmarts.png" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
+                scenario: "A user uploaded a photo that has nothing to do with our attraction.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Irrelevant",
@@ -2912,8 +2912,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Irrelevant." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/7245/pexels-photo-7245.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
-                scenario: "Someone lifted a professional photo from another site and posted it as ours. It is not original content.",
+                image: `<img src="https://www.healthizalife.com/wp-content/uploads/2022/04/Anti-Cancer-Medicines.jpg" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
+                scenario: "Someone lifted a professional photo from another site and posted it as ours.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Non-Original",
@@ -2922,8 +2922,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Non-Original." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/1370719/pexels-photo-1370719.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
-                scenario: "Someone posted a close-up photo of a guest without their permission. Reporting a privacy concern.",
+                image: `<img src="https://asset.library.wisc.edu/1711.dl/7EHRSRX4MNM6Y8I/M/h1380-b218a.jpg" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
+                scenario: "Someone posted a close-up photo of a guest without their permission.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Privacy",
@@ -2932,7 +2932,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Privacy." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/34330566/pexels-photo-34330566.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
+                image: `<img src="https://blansonhs.aldineisd.org/wp-content/uploads/sites/14/2021/10/Domestic-Violence-Awareness-Month-Sabrina-Moye-Roach.jpg" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
                 scenario: "Reporting a graphic and gory image on our page. It is completely inappropriate for our audience.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2942,8 +2942,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Graphic." }
             },
             {
-                image: `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='420'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%231f1730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23sg)'/%3E%3Cpath d='M300 178 v-16 a20 20 0 0 1 40 0 v16' fill='none' stroke='%23c9a6e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='284' y='178' width='72' height='56' rx='10' fill='%23c9a6e8'/%3E%3Ccircle cx='320' cy='204' r='6' fill='%23241a35'/%3E%3Crect x='317' y='204' width='6' height='14' rx='2' fill='%23241a35'/%3E%3Ctext x='320' y='268' font-family='Arial, sans-serif' font-weight='700' font-size='24' fill='%23efe3fb' text-anchor='middle'%3EContent Flagged%3C/text%3E%3Ctext x='320' y='296' font-family='Arial, sans-serif' font-size='14' fill='%23c9a6e8' text-anchor='middle' opacity='0.9'%3EAdult content %C2%B7 policy review%3C/text%3E%3C/svg%3E" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
-                scenario: "Someone posted pornographic content to our attraction listing. This must be removed immediately.",
+                image: `<img src="https://www.wfp.org/sites/default/files/images/publication/Screenshot%202025-08-11%20at%2014.58.52.png" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
+                scenario: "Someone posted content to our attraction listing.",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
                 policy: "Sexually Explicit",
@@ -2955,17 +2955,17 @@
 
         const incomingLevel1Questions = [
             {
-                image: `<img src="https://images.pexels.com/photos/3214160/pexels-photo-3214160.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
+                image: `<img src="https://www.vecteezy.com/photo/54183525-a-blurry-image-of-a-bunch-of-red-peppers" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 1",
                 tip: "Decide whether a normal traveller would expect to see this on a listing.",
                 correct: "publish",
-                policy: "",
+                policy: "Publish",
                 correctExplanation: "Correct. This is legitimate content that meets the guidelines, so it can stay published.",
                 wrongExplanations: { remove: "This does not break any policy. Removing it would take down valid, genuine content.", escalate: "No need to escalate. This is clearly acceptable and can simply be published." },
                 lifelines: { hint: "Decide whether a normal traveller would expect to see this on a listing.", eliminate: "remove", expert: "Would an ordinary traveller expect to see this on a listing? If yes, it can be published." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/18285946/pexels-photo-18285946.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                image: `<img src="https://www.vecteezy.com/photo/74417193-blurred-people-gathering-around-table-with-food-in-restaurant" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 2",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2975,7 +2975,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/576324/pexels-photo-576324.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                image: `<img src="https://www.vecteezy.com/photo/2783758-blur-restaurant-interior" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 3",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2985,7 +2985,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Commercial." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/695193/pexels-photo-695193.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv9hCEpC8e_TGrgI3rRFIzB8VoG6DYTNpQeb0TcAym3hUXOOKUeVWJTb5E&s=10" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 4",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2995,7 +2995,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Duplicate." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeyNuM-PAHhFkw-HOv6kDg7SDobNt8hiQXoYqny6UbQJAWWWYouRtQbi9N&s=10" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 5",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3005,7 +3005,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Illegal Activity." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/8287652/pexels-photo-8287652.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
+                image: `<img src="https://cdn.statcdn.com/Infographic/images/normal/15613.jpeg" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 6",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3015,7 +3015,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Irrelevant." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/7245/pexels-photo-7245.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyHshRocwFsl4c0VeM8wOZCT3yqv2spitf_-6Zvfsj43yu3HXo-1TOemg&s=10" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 7",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3025,7 +3025,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Non-Original." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/1370719/pexels-photo-1370719.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOWkYbVn4RcHmhs43DqJWXrfjPxiDfzhPb-owfeXZDJp5R-ToWsWLZTFfJ&s=10" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 8",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3035,7 +3035,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Privacy." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/34330566/pexels-photo-34330566.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTydV9WI57NvIW7P7ik-3zz6XY3FY6rkgjFnp_lEHgj78uKcCjY7PwAHbcn&s=10" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 9",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3045,7 +3045,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Graphic." }
             },
             {
-                image: `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='420'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%231f1730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23sg)'/%3E%3Cpath d='M300 178 v-16 a20 20 0 0 1 40 0 v16' fill='none' stroke='%23c9a6e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='284' y='178' width='72' height='56' rx='10' fill='%23c9a6e8'/%3E%3Ccircle cx='320' cy='204' r='6' fill='%23241a35'/%3E%3Crect x='317' y='204' width='6' height='14' rx='2' fill='%23241a35'/%3E%3Ctext x='320' y='268' font-family='Arial, sans-serif' font-weight='700' font-size='24' fill='%23efe3fb' text-anchor='middle'%3EContent Flagged%3C/text%3E%3Ctext x='320' y='296' font-family='Arial, sans-serif' font-size='14' fill='%23c9a6e8' text-anchor='middle' opacity='0.9'%3EAdult content %C2%B7 policy review%3C/text%3E%3C/svg%3E" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbweoN9iX6aJvQGYbfcbU2yhqGVEDSjlWNFZmYIaJFdbkTIWVlU-_lIvA&s=10" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 10",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3057,7 +3057,7 @@
         ];
         const incomingLevel2Questions = [
             {
-                image: `<img src="https://images.pexels.com/photos/7552316/pexels-photo-7552316.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Escalate content" loading="lazy" data-cat="escalate" onerror="handleImgError(this)">`,
+                image: `<img src="https://aztrauma.org/wp-content/uploads/2018/09/Picture2-1.jpg" alt="Escalate content" loading="lazy" data-cat="escalate" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 1",
                 tip: "Decide whether this needs a specialist rather than a routine action.",
                 correct: "escalate",
@@ -3067,7 +3067,7 @@
                 lifelines: { hint: "Decide whether this needs a specialist rather than a routine action.", eliminate: "publish", expert: "Is this beyond a routine keep or remove decision? If so, escalate it." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/18285946/pexels-photo-18285946.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX65eVmMwVe4Q56PTnVfKOH2qp9fX8jzJEl8EVYhDXYHifijHC10tPiEQ&s=10" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 2",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3077,7 +3077,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/576324/pexels-photo-576324.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                image: `<img src="https://img.magnific.com/free-photo/hamburger-juice-jar-tomatoes-avocado-sprout-digital-tablet-wooden-table_23-2148165611.jpg?semt=ais_test_b&w=740&q=80" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 3",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3087,7 +3087,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Commercial." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/695193/pexels-photo-695193.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-ih-aEFgZL7tby77GsMVtbtR8k7kussdPjE1uvnLvA&s=10" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 4",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3097,7 +3097,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Duplicate." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdWFCoaRcB6SZYTbDh92knStM-TP0UmAnlHbZMiji5UYxqAsNTqM99v8&s=10" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 5",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3107,7 +3107,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Illegal Activity." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/8287652/pexels-photo-8287652.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwnsaWwmkR6kn7CR6Ziex8LZXr1E3DOd3Ohlhk9842X12LS2Du3TZhBs&s=10" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 6",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3117,7 +3117,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Irrelevant." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/7245/pexels-photo-7245.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
+                image: `<img src="https://media.istockphoto.com/id/2184735143/photo/frustrated-receptionist-and-people-at-front-desk-of-hotel-for-angry-client-lost-luggage-and.jpg?s=612x612&w=0&k=20&c=WjCNfUexX5941j8wQ-pleCm-2vAdem_qV9v6Obx6eP8=" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 7",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3127,7 +3127,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Non-Original." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/1370719/pexels-photo-1370719.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGe4EhI_fEh-0HKQFBkXwAobwXMsyCdgHtXNPIjbS240qSuh9EUPClNE&s=10" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 8",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3137,7 +3137,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Privacy." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/34330566/pexels-photo-34330566.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
+                image: `<img src="https://img.magnific.com/premium-vector/hotel-reservation-social-media-marketing-banner-design-template_3146-4939.jpg?semt=ais_test_b&w=740&q=80" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 9",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3147,7 +3147,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Graphic." }
             },
             {
-                image: `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='420'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%231f1730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23sg)'/%3E%3Cpath d='M300 178 v-16 a20 20 0 0 1 40 0 v16' fill='none' stroke='%23c9a6e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='284' y='178' width='72' height='56' rx='10' fill='%23c9a6e8'/%3E%3Ccircle cx='320' cy='204' r='6' fill='%23241a35'/%3E%3Crect x='317' y='204' width='6' height='14' rx='2' fill='%23241a35'/%3E%3Ctext x='320' y='268' font-family='Arial, sans-serif' font-weight='700' font-size='24' fill='%23efe3fb' text-anchor='middle'%3EContent Flagged%3C/text%3E%3Ctext x='320' y='296' font-family='Arial, sans-serif' font-size='14' fill='%23c9a6e8' text-anchor='middle' opacity='0.9'%3EAdult content %C2%B7 policy review%3C/text%3E%3C/svg%3E" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPH-hTnPOjmN4Qd_1SKzT4nsnRZ0cTu9SrXURXkzuJY0Y3B04hm77RBRs&s" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
                 scenario: "Incoming L2, item 10",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3159,17 +3159,17 @@
         ];
         const incomingLevel3Questions = [
             {
-                image: `<img src="https://images.pexels.com/photos/3584338/pexels-photo-3584338.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
+                image: `<img src="https://static1.ara.cat/clip/9fa77899-3da3-48bb-a33d-9288d65f20d9_16-9-aspect-ratio_default_0_x3865y1206.jpg" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 1",
                 tip: "Decide whether a normal traveller would expect to see this on a listing.",
                 correct: "publish",
-                policy: "",
+                policy: "Publish",
                 correctExplanation: "Correct. This is legitimate content that meets the guidelines, so it can stay published.",
                 wrongExplanations: { remove: "This does not break any policy. Removing it would take down valid, genuine content.", escalate: "No need to escalate. This is clearly acceptable and can simply be published." },
                 lifelines: { hint: "Decide whether a normal traveller would expect to see this on a listing.", eliminate: "remove", expert: "Would an ordinary traveller expect to see this on a listing? If yes, it can be published." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/18285946/pexels-photo-18285946.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoTpM2uvdqwF-4TfXyRRaNBVCkbKup0kymlt_ZwaPPLCAhn1Eedw_fdQ&s=10" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 2",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3179,7 +3179,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/576324/pexels-photo-576324.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvAt-tP0_1MnYifk5mJaOkWMMe7-L98IcIqn353Atw2RalYGh_R-drwZk&s=10" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 3",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3189,7 +3189,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Commercial." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/695193/pexels-photo-695193.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwnsaWwmkR6kn7CR6Ziex8LZXr1E3DOd3Ohlhk9842X12LS2Du3TZhBs&s=10" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 4",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3199,7 +3199,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Duplicate." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/29350311/pexels-photo-29350311.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
+                image: `<img src="https://media.istockphoto.com/id/2184735143/photo/frustrated-receptionist-and-people-at-front-desk-of-hotel-for-angry-client-lost-luggage-and.jpg?s=612x612&w=0&k=20&c=WjCNfUexX5941j8wQ-pleCm-2vAdem_qV9v6Obx6eP8=" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 5",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3209,7 +3209,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Illegal Activity." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/8287652/pexels-photo-8287652.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
+                image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGe4EhI_fEh-0HKQFBkXwAobwXMsyCdgHtXNPIjbS240qSuh9EUPClNE&s=10" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 6",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3219,9 +3219,9 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Irrelevant." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/7245/pexels-photo-7245.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
+                image: `<img src="https://img.magnific.com/premium-vector/hotel-reservation-social-media-marketing-banner-design-template_3146-4939.jpg?semt=ais_test_b&w=740&q=80" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 7",
-                tip: "Check the content against the platform policies before deciding.",
+                tip: "Check the content against the platform policies before deciding.",    
                 correct: "remove",
                 policy: "Non-Original",
                 correctExplanation: "Correct. This breaks the Non-Original policy, so removing it is the right call.",
@@ -3229,7 +3229,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Non-Original." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/1370719/pexels-photo-1370719.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
+                image: `<img src="https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24821559/23.07_AI_Food_Photography__1_.png?quality=90&strip=all&crop=0,3.4613147178592,100,93.077370564282" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 8",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3239,7 +3239,8 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Privacy." }
             },
             {
-                image: `<img src="https://images.pexels.com/photos/34330566/pexels-photo-34330566.jpeg?auto=compress&cs=tinysrgb&w=640&h=420&fit=crop&fm=webp" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
+                image: `<img src="https://www.roomgpt.io/sample-2.png
+" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 9",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3249,7 +3250,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Graphic." }
             },
             {
-                image: `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='420'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%231f1730'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='420' fill='url(%23sg)'/%3E%3Cpath d='M300 178 v-16 a20 20 0 0 1 40 0 v16' fill='none' stroke='%23c9a6e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='284' y='178' width='72' height='56' rx='10' fill='%23c9a6e8'/%3E%3Ccircle cx='320' cy='204' r='6' fill='%23241a35'/%3E%3Crect x='317' y='204' width='6' height='14' rx='2' fill='%23241a35'/%3E%3Ctext x='320' y='268' font-family='Arial, sans-serif' font-weight='700' font-size='24' fill='%23efe3fb' text-anchor='middle'%3EContent Flagged%3C/text%3E%3Ctext x='320' y='296' font-family='Arial, sans-serif' font-size='14' fill='%23c9a6e8' text-anchor='middle' opacity='0.9'%3EAdult content %C2%B7 policy review%3C/text%3E%3C/svg%3E" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
+                image: `<img src="https://img.magnific.com/free-photo/3d-cartoon-food-table_23-2151884794.jpg?semt=ais_test_b&w=740&q=80" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
                 scenario: "Incoming L3, item 10",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3356,12 +3357,12 @@
             return await res.json();
         }
         async function gasPost(payload) {
-            const res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) });
+            const res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) }); 
             return await res.json();
         }
 
-        // Instant, synchronous read from localStorage. Never waits on the network.
-        function loadLocal() {
+        // Instant, synchronous read from localStorage. Never waits on the network.   
+        function loadLocal() { 
             cache.records = lsGet(LS_RECORDS).map(normalizeRecord);
             cache.waves = lsGet(LS_WAVES);
             cache.sessions = lsGet(LS_SESSIONS);
@@ -4055,16 +4056,26 @@
         function showRemoveReasonDropdown() { document.getElementById('removeReasonDropdown').classList.remove('hidden'); }
         function handleRemoveReason(reason) { if (!reason) return; makeDecision('remove', reason); document.getElementById('removeReasonSelect').value = ''; }
 
+        function normalizePolicyValue(value) {
+            return String(value || '').trim().replace(/\s+/g, ' ').toLowerCase();
+        }
+
         function makeDecision(choice, providedReason) {
             if (isAnswered) return;
             const q = currentQuestions[currentQuestion];
-            const isCorrect = choice === q.correct;
 
             let removeReason = '';
+            let reasonMatchesPolicy = true;
             if (choice === 'remove') {
                 removeReason = providedReason || document.getElementById('removeReasonSelect').value;
                 if (!removeReason) { showInlineMessage('Please select a reason for removal.', 'error'); return; }
+
+                const expectedPolicy = normalizePolicyValue(q.policy);
+                const selectedPolicy = normalizePolicyValue(removeReason);
+                reasonMatchesPolicy = selectedPolicy === expectedPolicy;
             }
+
+            const isCorrect = choice === q.correct && reasonMatchesPolicy;
 
             isAnswered = true;
             clearInterval(timerInterval);
