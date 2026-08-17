@@ -2955,7 +2955,7 @@
 
         const incomingLevel1Questions = [
             {
-                image: `<img src="https://www.vecteezy.com/photo/54183525-a-blurry-image-of-a-bunch-of-red-peppers" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
+                image: `<img src="https://media.istockphoto.com/id/1145578527/photo/blur-image-of-fast-food-restaurant-use-for-defocused-background.jpg?s=612x612&w=0&k=20&c=vDambt1ORG-de-3etsAzmxZPT49Tk-VJp89GX84Zny8=" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 1",
                 tip: "Decide whether a normal traveller would expect to see this on a listing.",
                 correct: "publish",
@@ -2965,7 +2965,7 @@
                 lifelines: { hint: "Decide whether a normal traveller would expect to see this on a listing.", eliminate: "remove", expert: "Would an ordinary traveller expect to see this on a listing? If yes, it can be published." }
             },
             {
-                image: `<img src="https://www.vecteezy.com/photo/74417193-blurred-people-gathering-around-table-with-food-in-restaurant" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+                image: `<img src="https://img.magnific.com/free-photo/blurred-restaurant-with-windows-background_1203-1612.jpg?semt=ais_test_b&w=740&q=80" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 2",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -2975,7 +2975,7 @@
                 lifelines: { hint: "Check the content against the platform policies before deciding.", eliminate: "publish", expert: "Ask yourself which single policy this content breaks. Here it is Photo Quality." }
             },
             {
-                image: `<img src="https://www.vecteezy.com/photo/2783758-blur-restaurant-interior" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
+                image: `<img src="https://media-cdn.tripadvisor.com/media/photo-s/03/c4/23/6d/hanna-maria.jpg" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
                 scenario: "Incoming L1, item 3",
                 tip: "Check the content against the platform policies before deciding.",
                 correct: "remove",
@@ -3269,31 +3269,31 @@
         const INCOMING_BANK = { 1: incomingLevel1Questions, 2: incomingLevel2Questions, 3: incomingLevel3Questions };
         function bankFor(queue, level) { return (queue === 'incoming' ? INCOMING_BANK : REPORTED_BANK)[level]; }
 
-        function handleImgError(img) {
-            img.onerror = null;
-            var cat = (img.getAttribute('data-cat') || '').toLowerCase();
-            var themes = {
-                quality:     ['#e7ecef', '#8aa0ad', '\uD83C\uDF2B', 'LOW QUALITY PHOTO'],
-                commercial:  ['#eef4ff', '#5b7bb0', '\uD83D\uDCE2', 'ADVERTISING / SPAM'],
-                duplicate:   ['#eefaf4', '#3a9d78', '\u29C9', 'DUPLICATE POST'],
-                irrelevant:  ['#f4f0ff', '#8a6fb0', '\uD83D\uDD00', 'OFF-TOPIC / IRRELEVANT'],
-                nonoriginal: ['#fff6ee', '#b07d4a', '\u00A9', 'NON-ORIGINAL / STOCK'],
-                privacy:     ['#eef7ff', '#4a86b0', '\uD83D\uDD12', 'PRIVACY CONCERN'],
-                illegal:     ['#2b2b2b', '#ffcc66', '\uD83D\uDEAB', 'ILLEGAL ACTIVITY'],
-                graphic:     ['#3a1f1f', '#ff9a9a', '\u26A0', 'GRAPHIC CONTENT'],
-                sexual:      ['#2a2233', '#e0a3ff', '\uD83D\uDD1E', 'ADULT CONTENT'],
-                escalate:    ['#12233b', '#8fbaff', '\u2691', 'NEEDS REVIEW'],
-                publish:     ['#eef7f1', '#3a9d78', '\uD83D\uDDBC', 'TRAVEL PHOTO']
-            };
-            var t = themes[cat] || ['#eef2f5', '#9aa7b1', '\uD83D\uDDBC', 'IMAGE UNAVAILABLE'];
-            var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420">' +
-                '<rect width="640" height="420" fill="' + t[0] + '"/>' +
-                '<g text-anchor="middle" fill="' + t[1] + '">' +
-                '<text x="320" y="210" font-size="110">' + t[2] + '</text>' +
-                '<text x="320" y="274" font-family="Arial, sans-serif" font-weight="bold" font-size="26">' + t[3] + '</text>' +
-                '</g></svg>';
-            img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-        }
+        // function handleImgError(img) {
+        //     img.onerror = null;
+        //     var cat = (img.getAttribute('data-cat') || '').toLowerCase();
+        //     var themes = {
+        //         quality:     ['#e7ecef', '#8aa0ad', '\uD83C\uDF2B', 'LOW QUALITY PHOTO'],
+        //         commercial:  ['#eef4ff', '#5b7bb0', '\uD83D\uDCE2', 'ADVERTISING / SPAM'],
+        //         duplicate:   ['#eefaf4', '#3a9d78', '\u29C9', 'DUPLICATE POST'],
+        //         irrelevant:  ['#f4f0ff', '#8a6fb0', '\uD83D\uDD00', 'OFF-TOPIC / IRRELEVANT'],
+        //         nonoriginal: ['#fff6ee', '#b07d4a', '\u00A9', 'NON-ORIGINAL / STOCK'],
+        //         privacy:     ['#eef7ff', '#4a86b0', '\uD83D\uDD12', 'PRIVACY CONCERN'],
+        //         illegal:     ['#2b2b2b', '#ffcc66', '\uD83D\uDEAB', 'ILLEGAL ACTIVITY'],
+        //         graphic:     ['#3a1f1f', '#ff9a9a', '\u26A0', 'GRAPHIC CONTENT'],
+        //         sexual:      ['#2a2233', '#e0a3ff', '\uD83D\uDD1E', 'ADULT CONTENT'],
+        //         escalate:    ['#12233b', '#8fbaff', '\u2691', 'NEEDS REVIEW'],
+        //         publish:     ['#eef7f1', '#3a9d78', '\uD83D\uDDBC', 'TRAVEL PHOTO']
+        //     };
+        //     var t = themes[cat] || ['#eef2f5', '#9aa7b1', '\uD83D\uDDBC', 'IMAGE UNAVAILABLE'];
+        //     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420">' +
+        //         '<rect width="640" height="420" fill="' + t[0] + '"/>' +
+        //         '<g text-anchor="middle" fill="' + t[1] + '">' +
+        //         '<text x="320" y="210" font-size="110">' + t[2] + '</text>' +
+        //         '<text x="320" y="274" font-family="Arial, sans-serif" font-weight="bold" font-size="26">' + t[3] + '</text>' +
+        //         '</g></svg>';
+        //     img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+        // }
 
         // ========================================================
         //  PLATFORM SDK (title/config only)
