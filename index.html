@@ -3765,6 +3765,7 @@
             <div class="question-number" id="questionNumber">
               Question 1 of 10
             </div>
+            <div class="property-name" id="propertyName" style="font-size: 0.75rem; color: var(--ta-gray); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Hotels</div>
             <div class="question-image" id="questionImage">
               [Content Image Placeholder]
             </div>
@@ -4197,6 +4198,7 @@
       // Level 1 Questions (Easy - Clear violations/approvals)
       const level1Questions = [
         {
+          property: 'The Plaza Hotel, New York City, USA',
           image: `<img src="https://daileyfoods.com/wp-content/uploads/2024/05/4-1024x1024.png" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
           scenario:
             "A guest shared this photo of the food we served. It looks accurate and appetising. It was reported, but I think it is perfectly fine.",
@@ -4219,6 +4221,7 @@
           },
         },
         {
+          property: 'The Ritz-Carlton New York, Central Park, USA',
           image: `<img src="https://media.gettyimages.com/id/1796981245/photo/close-up-of-a-camera-screen-recording-a-fitness-man-blogging-at-home.jpg?s=612x612&w=gi&k=20&c=-LhOW-GFV_IqcHiQOUNG--xpFxLfJlFtaX1MBqSRNBE=" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario:
             "I own this hotel. Please review the image and remove it if it.",
@@ -4241,6 +4244,7 @@
           },
         },
         {
+            property: 'The St. Regis New York, USA',
           image: `<img src="https://www.bhphotovideo.com/images/images750x750/datavideo_tg_200_video_production_teacher_s_guide_1672882.jpg" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
           scenario:
             "I’m reporting this image because it is not appropriate for my business listing.",
@@ -4263,6 +4267,7 @@
           },
         },
         {
+          property: 'The Peninsula New York, USA',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3erHsSjGZMWGAE2J_trlK-oQ2vXiJOVmpQ&s" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
           scenario: "Please review and remove the image from my listing.",
           tip: "Check the content against the platform policies before deciding.",
@@ -4284,6 +4289,7 @@
           },
         },
         {
+          property: 'Park Hyatt New York, USA',
           image: `<img src="https://tse3.mm.bing.net/th/id/OIP.jS8_G9xwwuurwj2j88dmugAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
           scenario:
             "It appears blurry and does not accurately represent my business. Please review.",
@@ -4306,6 +4312,7 @@
           },
         },
         {
+            property: 'The Beverly Hills Hotel, Los Angeles, USA',
           image: `<img src="https://t4.ftcdn.net/jpg/10/13/31/37/360_F_1013313738_o0YNG8h28wDywjfUsr1U5fV6rl5Z9dML.jpg" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
           scenario:
             "I’m reporting this photo because it is misleading and appears to show a ghost.",
@@ -4328,6 +4335,7 @@
           },
         },
         {
+            property: 'The Langham Huntington, Pasadena, Los Angeles, USA',
           image: `<img src="https://images.template.net/405235/Hotel-Service-Banner-Template-edit-online.png" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario:
             "I’m reporting this photo because it is not related to my business or the services we provide.",
@@ -4350,28 +4358,30 @@
           },
         },
         {
+          property: 'The Ritz-Carlton, Los Angeles, USA',
           image: `<img src="https://travelution.media/_next/image?url=%2Fpanel-content%2Fuploads%2F2026%2F4%2FDSC04577.jpg&w=3840&q=75" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
           scenario:
-            "Our staff photo plantation is being used in a way to represent our business.",
+            "Our staff photo is posted without consent",
           tip: "Check the content against the platform policies before deciding.",
-          correct: "publish",
-          policy: "Publish",
+          correct: "remove",
+          policy: "Privacy",
           correctExplanation:
-            "Correct. This breaks the Publish policy, so removing it is the right call.",
+            "Correct. This breaks the Privacy policy, so removing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Publish violation and must be removed.",
+              "This should not be published. It is a clear Privacy violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Publish violation you can remove directly.",
+              "No need to escalate. This is a straightforward Privacy violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Publish.",
+              "Ask yourself which single policy this content breaks. Here it is Privacy.",
           },
         },
         {
+          property: 'Fairmont San Francisco, USA',
           image: `<img src="https://www.monderlaw.com/wp-content/uploads/2024/04/What-is-a-felony-drug-charge-in-California.jpg" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
           scenario:
             "This image is misleading because the product shown is not sold or offered at our hotel.",
@@ -4394,6 +4404,7 @@
           },
         },
         {
+          property: 'Hotel del Coronado, San Diego, USA',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT6-e6DWnfH8Y0DnLEwFuORNN-9lkXSw-_wQ&s" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
           scenario: "This photo was posted by a group of friends",
           tip: "Check the content against the platform policies before deciding.",
@@ -4419,6 +4430,7 @@
       // Level 2 Questions (Intermediate - Requires more thought)
       const level2Questions = [
         {
+            property: 'Fairmont Le Château Frontenac, Quebec City, Canada',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB_IQmCquo9PeYvUTdyz6XxRbf8hQIIK_yuUx7qwnkvA&s" alt="Escalate content" loading="lazy" data-cat="escalate" onerror="handleImgError(this)">`,
           scenario:
             "The image contains explicit graphic.",
@@ -4441,6 +4453,7 @@
           },
         },
         {
+            property: 'Fairmont Royal York, Toronto, Canada',
           image: `<img src="https://tse1.mm.bing.net/th/id/OIP.xsseJ-L9r4EzTOE-6wBKlQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario:
             "This photo of our hotel room is completely out of focus. I do not think such low quality images should stay on our page.",
@@ -4463,6 +4476,7 @@
           },
         },
         {
+            property: 'The Ritz-Carlton, Toronto, Canada',
           image: `<img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/free-medical-camp-design-template-b6101353f0605b9179200e35e650d2e5_3a1b14bb-28e0-4b9c-9c1d-7e9789b9f8b6_screen.webp?ts=1777953527" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
           scenario:
             "A competitor uploaded a promotional poster. This is advertising, not a real photo.",
@@ -4485,28 +4499,30 @@
           },
         },
         {
+            property: 'Rosewood Hotel Georgia, Vancouver, Canada',
           image: `<img src="https://tse3.mm.bing.net/th/id/OIP.4xu5HAzp-NgO-37K11oGLgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
           scenario:
             "it is unrelated to our hotel and does not represent our property or services.",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
-          policy: "Non-Original",
+          policy: "Irrelevant",
           correctExplanation:
-            "Correct. This breaks the Non-Original policy, so removing it is the right call.",
+            "Correct. This breaks the Irrelevant policy, so removing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Non-Original violation and must be removed.",
+              "This should not be published. It is a clear Irrelevant violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Non-Original violation you can remove directly.",
+              "No need to escalate. This is a straightforward Irrelevant violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Non-Original.",
+              "Ask yourself which single policy this content breaks. Here it is Irrelevant.",
           },
         },
         {
+            property: 'Fairmont Pacific Rim, Vancouver, Canada',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvV5lenlbRd7u_ksuQOAhugiuoErBv-OObLg&s" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
           scenario: " Please review and remove.",
           tip: "Check the content against the platform policies before deciding.",
@@ -4528,9 +4544,10 @@
           },
         },
         {
+            property: 'The Savoy, London, United Kingdom',
           image: `<img src="https://tse3.mm.bing.net/th/id/OIP.O9CbUoQgTBb8fIiwIeTpWwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
           scenario:
-            "This photo cntains a my face.",
+            "This photo contains my face.",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
           policy: "Privacy",
@@ -4550,6 +4567,7 @@
           },
         },
         {
+            property: 'The Ritz London, United Kingdom',
           image: `<img src="https://media.easy-peasy.ai/491bfdcb-0a09-40d9-b6cd-fc6570d16c5f/0cbecbe3-c02e-474f-a784-0ce89db34127_medium.webp" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario:
             "The image contains staff members.",
@@ -4572,6 +4590,7 @@
           },
         },
         {
+            property: 'Claridges, London, United Kingdom',
           image: `<img src="https://i.guim.co.uk/img/media/9e83c7c6df63b253b24b7cb0043122556d2d596a/0_136_3500_2100/master/3500.jpg?width=445&dpr=1&s=none&crop=none" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario:
             "This image is not relevant to our property.",
@@ -4594,6 +4613,7 @@
           },
         },
         {
+            property: 'The Dorchester, London, United Kingdom',
           image: `<img src="https://embedsocial.com/wp-content/uploads/2021/09/positive-review-examples-hero-768x401.jpg" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
           scenario:
             "The image does not reflect our property.",
@@ -4616,6 +4636,7 @@
           },
         },
         {
+            property: 'The Langham, London, United Kingdom',
           image: `<img src="https://intensedebate.com/images/screenshots/intensedebate-screenshot.jpg" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
           scenario: "Not related to us, Please remove it as soon as possible.",
           tip: "Check the content against the platform policies before deciding.",
@@ -4641,6 +4662,7 @@
       // Level 3 Questions (Critical - Complex scenarios requiring deep analysis)
       const level3Questions = [
         {
+            property: 'The Connaught, London, United Kingdom',
           image: `<img src="https://researchmethod.net/wp-content/uploads/2022/08/Research_Findings.jpg" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
           scenario:
             "A traveller posted this Flagged by someone, but it is an accurate.",
@@ -4663,6 +4685,7 @@
           },
         },
         {
+            property: 'The Berkeley, London, United Kingdom',
           image: `<img src="https://houklawfirm.com/wp-content/uploads/2025/07/Three-Types-of-Protection-for-Workplace-Whistleblowers-in-Phoenix-AZ.jpg" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario: "This is not related to us.",
           tip: "Check the content against the platform policies before deciding.",
@@ -4684,6 +4707,7 @@
           },
         },
         {
+            property: 'The Goring, London, United Kingdom',
           image: `<img src="https://tse2.mm.bing.net/th/id/OIP.gQdKpvt79OHYBhG2TRUCAAHaEO?pid=ImgDet&w=191&h=109&c=7&o=7&rm=3" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
           scenario: "not accurately represent our property or services.",
           tip: "Check the content against the platform policies before deciding.",
@@ -4705,8 +4729,9 @@
           },
         },
         {
+            property: 'The Balmoral Hotel, Edinburgh, United Kingdom',
           image: `<img src="https://etimg.etb2bimg.com/thumb/msid-97650744,imgsize-26640,width-1200,height=627,overlay-etgovernment,resizemode-75/news/governance/delhi-police-join-hands-with-meta-to-run-awareness-campaign-against-online-harassment.jpg" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
-          scenario: "Same image, posted repeatedly on our page by someone.",
+          scenario: "Same image is being posted repeatedly on our page by someone to defame.",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
           policy: "Duplicate",
@@ -4726,6 +4751,7 @@
           },
         },
         {
+            property: 'The Grand Hotel, Stockholm, Sweden',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCYF-AN5YBm1SxUvBMsL5DgStD8ouFnAe-Me5ocYychgGcHBnLJXGzGr7&s=10" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
           scenario:
             "Reporting a guest photo that clearly depicts illegal substance use at our venue. This should not be on our page.",
@@ -4748,6 +4774,7 @@
           },
         },
         {
+            property: 'Hotel d Angleterre, Copenhagen, Denmark',
           image: `<img src="https://www.eci.gov.in/newimg/ict-apps/screenshots/web-apps/results-trends-tv/cmarts.png" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
           scenario:
             "A user uploaded a photo that has nothing to do with our attraction.",
@@ -4770,28 +4797,30 @@
           },
         },
         {
+            property: 'Hotel Kämp, Helsinki, Finland',
           image: `<img src="https://www.healthizalife.com/wp-content/uploads/2022/04/Anti-Cancer-Medicines.jpg" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario:
             "Someone lifted a professional photo from another site and posted it as ours.",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
-          policy: "Non-Original",
+          policy: "Irrelevant",
           correctExplanation:
-            "Correct. This breaks the Non-Original policy, so removing it is the right call.",
+            "Correct. This breaks the Irrelevant policy, so removing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Non-Original violation and must be removed.",
+              "This should not be published. It is a clear Irrelevant violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Non-Original violation you can remove directly.",
+              "No need to escalate. This is a straightforward Irrelevant violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Non-Original.",
+              "Ask yourself which single policy this content breaks. Here it is Irrelevant.",
           },
         },
         {
+            property: 'Hotel Grande Bretagne, Athens, Greece',
           image: `<img src="https://asset.library.wisc.edu/1711.dl/7EHRSRX4MNM6Y8I/M/h1380-b218a.jpg" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
           scenario:
             "This photo does not belong to the property experience.",
@@ -4814,6 +4843,7 @@
           },
         },
         {
+            property: 'Hôtel Plaza Athénée, Paris, France',
           image: `<img src="https://blansonhs.aldineisd.org/wp-content/uploads/sites/14/2021/10/Domestic-Violence-Awareness-Month-Sabrina-Moye-Roach.jpg" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
           scenario:
             "Reporting a graphic and gory image on our page. It is completely inappropriate for our audience.",
@@ -4836,6 +4866,7 @@
           },
         },
         {
+            property: 'Le Meurice, Paris, France',
           image: `<img src="https://www.wfp.org/sites/default/files/images/publication/Screenshot%202025-08-11%20at%2014.58.52.png" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
           scenario: "Someone posted content to our attraction listing.",
           tip: "Check the content against the platform policies before deciding.",
@@ -4860,6 +4891,7 @@
 
       const incomingLevel1Questions = [
         {
+            property: 'The Ritz Paris, France',
           image: `<img src="https://media.istockphoto.com/id/1145578527/photo/blur-image-of-fast-food-restaurant-use-for-defocused-background.jpg?s=612x612&w=0&k=20&c=vDambt1ORG-de-3etsAzmxZPT49Tk-VJp89GX84Zny8=" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 1",
           tip: "Decide whether a normal traveller would expect to see this on a listing.",
@@ -4881,6 +4913,7 @@
           },
         },
         {
+            property: 'Shangri-La Paris, France',
           image: `<img src="https://img.magnific.com/free-photo/blurred-restaurant-with-windows-background_1203-1612.jpg?semt=ais_test_b&w=740&q=80" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 2",
           tip: "Check the content against the platform policies before deciding.",
@@ -4902,27 +4935,29 @@
           },
         },
         {
+            property: 'Four Seasons Hotel George V, Paris, France',
           image: `<img src="https://media-cdn.tripadvisor.com/media/photo-s/03/c4/23/6d/hanna-maria.jpg" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 3",
           tip: "Check the content against the platform policies before deciding.",
-          correct: "remove",
-          policy: "Photo Quality",
+          correct: "publish",
+          policy: "Publish",
           correctExplanation:
-            "Correct. This breaks the Photo Quality policy, so removing it is the right call.",
+            "Correct. This breaks the Publish policy, so publishing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Photo Quality violation and must be removed.",
+              "This should not be published. It is a clear Publish violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Photo Quality violation you can remove directly.",
+              "No need to escalate. This is a straightforward Publish violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Photo Quality.",
+              "Ask yourself which single policy this content breaks. Here it is Publish.",
           },
         },
         {
+            property: 'Hôtel de Crillon, Paris, France',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv9hCEpC8e_TGrgI3rRFIzB8VoG6DYTNpQeb0TcAym3hUXOOKUeVWJTb5E&s=10" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 4",
           tip: "Check the content against the platform policies before deciding.",
@@ -4944,6 +4979,7 @@
           },
         },
         {
+            property: 'Hotel Danieli, Venice, Italy',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeyNuM-PAHhFkw-HOv6kDg7SDobNt8hiQXoYqny6UbQJAWWWYouRtQbi9N&s=10" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 5",
           tip: "Check the content against the platform policies before deciding.",
@@ -4965,6 +5001,7 @@
           },
         },
         {
+            property: 'Hotel Cipriani, Venice, Italy',
           image: `<img src="https://cdn.statcdn.com/Infographic/images/normal/15613.jpeg" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 6",
           tip: "Check the content against the platform policies before deciding.",
@@ -4986,27 +5023,29 @@
           },
         },
         {
+            property: 'Four Seasons Hotel Firenze, Florence, Italy',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyHshRocwFsl4c0VeM8wOZCT3yqv2spitf_-6Zvfsj43yu3HXo-1TOemg&s=10" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 7",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
-          policy: "Photo Quality",
+          policy: "Non-Original",
           correctExplanation:
-            "Correct. This breaks the Photo Quality policy, so removing it is the right call.",
+            "Correct. This breaks the Non-Original policy, so removing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Photo Quality violation and must be removed.",
+              "This should not be published. It is a clear Non-Original violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Photo Quality violation you can remove directly.",
+              "No need to escalate. This is a straightforward Non-Original violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Photo Quality.",
+              "Ask yourself which single policy this content breaks. Here it is Non-Original.",
           },
         },
         {
+            property: 'Hassler Roma, Rome, Italy',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOWkYbVn4RcHmhs43DqJWXrfjPxiDfzhPb-owfeXZDJp5R-ToWsWLZTFfJ&s=10" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 8",
           tip: "Check the content against the platform policies before deciding.",
@@ -5028,6 +5067,7 @@
           },
         },
         {
+            property: 'Hotel Eden, Rome, Italy',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTydV9WI57NvIW7P7ik-3zz6XY3FY6rkgjFnp_lEHgj78uKcCjY7PwAHbcn&s=10" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 9",
           tip: "Check the content against the platform policies before deciding.",
@@ -5049,6 +5089,7 @@
           },
         },
         {
+            property: 'Badrutts Palace Hotel, St. Moritz, Switzerland',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbweoN9iX6aJvQGYbfcbU2yhqGVEDSjlWNFZmYIaJFdbkTIWVlU-_lIvA&s=10" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
           scenario: "Incoming L1, item 10",
           tip: "Check the content against the platform policies before deciding.",
@@ -5072,6 +5113,7 @@
       ];
       const incomingLevel2Questions = [
         {
+            property: 'The Dolder Grand, Zurich, Switzerland',
           image: `<img src="https://aztrauma.org/wp-content/uploads/2018/09/Picture2-1.jpg" alt="Escalate content" loading="lazy" data-cat="escalate" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 1",
           tip: "Decide whether this needs a specialist rather than a routine action.",
@@ -5093,27 +5135,29 @@
           },
         },
         {
+            property: 'Hotel President Wilson, Geneva, Switzerland',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX65eVmMwVe4Q56PTnVfKOH2qp9fX8jzJEl8EVYhDXYHifijHC10tPiEQ&s=10" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 2",
           tip: "Check the content against the platform policies before deciding.",
           correct: "escalate",
           policy: "",
           correctExplanation:
-            "Correct. This breaks the Photo Quality policy, so removing it is the right call.",
+            "Correct. This is sensitive or ambiguous, so it should be escalated for expert or legal review.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Photo Quality violation and must be removed.",
-            escalate:
-              "No need to escalate. This is a straightforward Photo Quality violation you can remove directly.",
+              "Do not publish this as it stands. It needs an expert to review it first.",
+            remove:
+              "Do not just remove this. It needs expert or legal review before any action is taken.",
           },
           lifelines: {
-            hint: "Check the content against the platform policies before deciding.",
+            hint: "Decide whether this needs a specialist rather than a routine action.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Photo Quality.",
+              "Is this beyond a routine keep or remove decision? If so, escalate it.",
           },
         },
         {
+            property: 'Mandarin Oriental, Barcelona, Spain',
           image: `<img src="https://img.magnific.com/free-photo/hamburger-juice-jar-tomatoes-avocado-sprout-digital-tablet-wooden-table_23-2148165611.jpg?semt=ais_test_b&w=740&q=80" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 3",
           tip: "Check the content against the platform policies before deciding.",
@@ -5135,6 +5179,7 @@
           },
         },
         {
+            property: 'Hotel Arts Barcelona, Spain',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-ih-aEFgZL7tby77GsMVtbtR8k7kussdPjE1uvnLvA&s=10" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 4",
           tip: "Check the content against the platform policies before deciding.",
@@ -5156,6 +5201,7 @@
           },
         },
         {
+            property: 'The Westin Palace Madrid, Spain',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPdWFCoaRcB6SZYTbDh92knStM-TP0UmAnlHbZMiji5UYxqAsNTqM99v8&s=10" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 5",
           tip: "Check the content against the platform policies before deciding.",
@@ -5177,69 +5223,73 @@
           },
         },
         {
+            property: 'Hotel Alfonso XIII, Seville, Spain',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwnsaWwmkR6kn7CR6Ziex8LZXr1E3DOd3Ohlhk9842X12LS2Du3TZhBs&s=10" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 6",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
-          policy: "Non-Original",
+          policy: "Irrelevant",
           correctExplanation:
-            "Correct. This breaks the Non-Original policy, so removing it is the right call.",
+            "Correct. This breaks the Irrelevant policy, so removing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Non-Original violation and must be removed.",
+              "This should not be published. It is a clear Irrelevant violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Non-Original violation you can remove directly.",
+              "No need to escalate. This is a straightforward Irrelevant violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Non-Original.",
+              "Ask yourself which single policy this content breaks. Here it is Irrelevant.",
           },
         },
         {
+            property: 'Burj Al Arab Jumeirah, Dubai, United Arab Emirates',
           image: `<img src="https://media.istockphoto.com/id/2184735143/photo/frustrated-receptionist-and-people-at-front-desk-of-hotel-for-angry-client-lost-luggage-and.jpg?s=612x612&w=0&k=20&c=WjCNfUexX5941j8wQ-pleCm-2vAdem_qV9v6Obx6eP8=" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 7",
           tip: "Check the content against the platform policies before deciding.",
-          correct: "remove",
-          policy: "Non-Original",
+          correct: "publish",
+          policy: "Publish",
           correctExplanation:
-            "Correct. This breaks the Non-Original policy, so removing it is the right call.",
+            "Correct. This breaks the Publish policy, so publishing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Non-Original violation and must be removed.",
+              "This should not be published. It is a clear Publish violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Non-Original violation you can remove directly.",
+              "No need to escalate. This is a straightforward Publish violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Non-Original.",
+              "Ask yourself which single policy this content breaks. Here it is Publish.",
           },
         },
         {
+            property: 'Atlantis The Royal',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGe4EhI_fEh-0HKQFBkXwAobwXMsyCdgHtXNPIjbS240qSuh9EUPClNE&s=10" alt="Privacy content" loading="lazy" data-cat="privacy" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 8",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
-          policy: "Non-Original",
+          policy: "Irrelevant",
           correctExplanation:
-            "Correct. This breaks the Non-Original policy, so removing it is the right call.",
+            "Correct. This breaks the Irrelevant policy, so removing it is the right call.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Non-Original violation and must be removed.",
+              "This should not be published. It is a clear Irrelevant violation and must be removed.",
             escalate:
-              "No need to escalate. This is a straightforward Non-Original violation you can remove directly.",
+              "No need to escalate. This is a straightforward Irrelevant violation you can remove directly.",
           },
           lifelines: {
             hint: "Check the content against the platform policies before deciding.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Non-Original.",
+              "Ask yourself which single policy this content breaks. Here it is Irrelevant.",
           },
         },
         {
+            property: 'Atlantis, The Palm, Dubai,',
           image: `<img src="https://img.magnific.com/premium-vector/hotel-reservation-social-media-marketing-banner-design-template_3146-4939.jpg?semt=ais_test_b&w=740&q=80" alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 9",
           tip: "Check the content against the platform policies before deciding.",
@@ -5261,6 +5311,7 @@
           },
         },
         {
+            property: 'The Ritz-Carlton, Dubai,',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPH-hTnPOjmN4Qd_1SKzT4nsnRZ0cTu9SrXURXkzuJY0Y3B04hm77RBRs&s" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
           scenario: "Incoming L2, item 10",
           tip: "Check the content against the platform policies before deciding.",
@@ -5284,6 +5335,7 @@
       ];
       const incomingLevel3Questions = [
         {
+            property: 'One&Only The Palm',
           image: `<img src="https://static1.ara.cat/clip/9fa77899-3da3-48bb-a33d-9288d65f20d9_16-9-aspect-ratio_default_0_x3865y1206.jpg" alt="Publish content" loading="lazy" data-cat="publish" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 1",
           tip: "Decide whether a normal traveller would expect to see this on a listing.",
@@ -5305,7 +5357,8 @@
           },
         },
         {
-          image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoTpM2uvdqwF-4TfXyRRaNBVCkbKup0kymlt_ZwaPPLCAhn1Eedw_fdQ&s=10" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+            property: 'Emirates Palace Mandarin Oriental,',
+          image: `<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/1a186530047003.561116ca298f7.jpg" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 2",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
@@ -5326,27 +5379,29 @@
           },
         },
         {
+            property: 'Jumeirah Al Qasr, Dubai',
           image: `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvAt-tP0_1MnYifk5mJaOkWMMe7-L98IcIqn353Atw2RalYGh_R-drwZk&s=10" alt="Commercial content" loading="lazy" data-cat="commercial" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 3",
           tip: "Check the content against the platform policies before deciding.",
-          correct: "remove",
-          policy: "Sexually Explicit",
+          correct: "escalate",
+          policy: "",
           correctExplanation:
-            "Correct. This breaks the Sexually Explicit policy, so removing it is the right call.",
+            "Correct. This is sensitive or ambiguous, so it should be escalated for expert or legal review.",
           wrongExplanations: {
             publish:
-              "This should not be published. It is a clear Sexually Explicit violation and must be removed.",
-            escalate:
-              "No need to escalate. This is a straightforward Sexually Explicit violation you can remove directly.",
+              "Do not publish this as it stands. It needs an expert to review it first.",
+            remove:
+              "Do not just remove this. It needs expert or legal review before any action is taken.",
           },
           lifelines: {
-            hint: "Check the content against the platform policies before deciding.",
+            hint: "Decide whether this needs a specialist rather than a routine action.",
             eliminate: "publish",
             expert:
-              "Ask yourself which single policy this content breaks. Here it is Sexually Explicit.",
+              "Is this beyond a routine keep or remove decision? If so, escalate it.",
           },
         },
         {
+            property: 'The Oberoi Udaivilas, Udaipur',
           image: `<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/9c/66/e6/hotel-classic-kanchipuram.jpg?w=1400&h=1400&s=1" alt="Duplicate content" loading="lazy" data-cat="duplicate" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 4",
           tip: "Check the content against the platform policies before deciding.",
@@ -5368,6 +5423,7 @@
           },
         },
         {
+            property: 'The Taj Mahal Palace, Mumbai',
           image: `<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/22/e0/aa/oyo-26797-ss-hotels.jpg?w=700&h=-1&s=1" alt="Illegal Activity content" loading="lazy" data-cat="illegal" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 5",
           tip: "Check the content against the platform policies before deciding.",
@@ -5389,6 +5445,7 @@
           },
         },
         {
+            property: 'The Leela Palace New Delhi',
           image: `<img src="https://media.cnn.com/api/v1/images/stellar/prod/190418172159-hotels-23.jpg?q=w_1600,h_900,x_0,y_0,c_fill" alt="Irrelevant content" loading="lazy" data-cat="irrelevant" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 6",
           tip: "Check the content against the platform policies before deciding.",
@@ -5410,6 +5467,7 @@
           },
         },
         {
+            property: 'Raffles Udaipur, India',
           image: `<img src="https://img.magnific.com/premium-vector/hotel-reservation-social-media-marketing-banner-design-template_3146-4939.jpg?semt=ais_test_b&w=740&q=80" alt="Non-Original content" loading="lazy" data-cat="nonoriginal" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 7",
           tip: "Check the content against the platform policies before deciding.",
@@ -5431,6 +5489,7 @@
           },
         },
         {
+            property: 'Taj Falaknuma Palace, Hyderabad',
           image: `<img src="https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24821559/23.07_AI_Food_Photography__1_.png?quality=90&strip=all&crop=0,3.4613147178592,100,93.077370564282" alt="Photo Quality content" loading="lazy" data-cat="photo-quality" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 8",
           tip: "Check the content against the platform policies before deciding.",
@@ -5452,6 +5511,7 @@
           },
         },
         {
+            property: 'The Oberoi Rajvilas, Jaipur',
           image: `<img src="https://www.roomgpt.io/sample-2.png
 " alt="Graphic content" loading="lazy" data-cat="graphic" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 9",
@@ -5474,6 +5534,7 @@
           },
         },
         {
+            property: 'The Oberoi Amarvilas, Agra',
           image: `<img src="https://img.magnific.com/free-photo/3d-cartoon-food-table_23-2151884794.jpg?semt=ais_test_b&w=740&q=80" alt="Sexually Explicit content" loading="lazy" data-cat="sexual" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 10",
           tip: "Check the content against the platform policies before deciding.",
@@ -5494,7 +5555,7 @@
               "Ask yourself which single policy this content breaks. Here it is Non-Original.",
           },
         },
-      ];
+      ]; 
 
       // ========================================================
       //  QUESTION BANKS  (reported = the 30 authored items above;
@@ -6986,6 +7047,8 @@
           " of " +
           currentQuestions.length;
         document.getElementById("questionImage").innerHTML = q.image;
+        document.getElementById("propertyName").textContent =
+          q.property || "Hotels";
 
         const sc = document.getElementById("scenario");
         if (activeQueue === "incoming") {
