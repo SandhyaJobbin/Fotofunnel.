@@ -1840,49 +1840,128 @@
 
       .wave-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 14px;
+      }
+      /* ---- Uniform trainer-tool card base ---- */
+      .wave-card,
+      .sess-card {
+        border: 1.5px solid var(--ta-border);
+        border-radius: 16px;
+        padding: 18px 16px 14px;
+        background: #fff;
+        box-shadow: var(--ta-shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        transition: box-shadow 0.18s ease, transform 0.18s ease;
+      }
+      .wave-card:hover,
+      .sess-card:hover {
+        box-shadow: var(--ta-shadow-hover);
+        transform: translateY(-2px);
       }
       .wave-card {
-        border: 1.5px solid var(--ta-border);
-        border-radius: 14px;
-        padding: 14px;
-        background: var(--ta-linen-soft);
+        border-top: 4px solid var(--ta-green-dark);
+        background: linear-gradient(160deg, #f6fdf9 0%, #fff 60%);
       }
-      .wave-card h4 {
-        margin: 0 0 4px;
-        font-size: 1rem;
-        color: var(--ta-ink);
+      .sess-card {
+        border-top: 4px solid var(--ta-amber);
+        background: linear-gradient(160deg, #fffaf4 0%, #fff 60%);
       }
-      .wave-card .wave-trainer {
-        font-size: 0.8rem;
-        color: var(--ta-green-dark);
-        margin-bottom: 10px;
-        font-weight: 600;
-      }
-      .wave-card .wave-metrics {
+      /* Card header row */
+      .tc-header {
         display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
       }
-      .wave-card .wave-metric {
+      .tc-icon {
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+      }
+      .wave-card .tc-icon { background: rgba(0,168,112,0.12); }
+      .sess-card .tc-icon { background: rgba(248,155,66,0.14); }
+      .tc-title-block { flex: 1; min-width: 0; }
+      .tc-name {
+        font-size: 0.98rem;
+        font-weight: 800;
+        color: var(--ta-ink);
+        margin: 0 0 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .tc-trainer {
+        font-size: 0.76rem;
+        color: var(--ta-green-dark);
+        font-weight: 700;
+      }
+      .sess-card .tc-trainer { color: #a15c12; }
+      /* Tags row */
+      .tc-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .tc-tag {
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--ta-border);
+        background: var(--ta-linen-soft);
+        color: var(--ta-gray);
+      }
+      .tc-tag.green { background: rgba(0,168,112,0.09); border-color: rgba(0,168,112,0.3); color: var(--ta-green-dark); }
+      .tc-tag.amber { background: rgba(248,155,66,0.12); border-color: rgba(248,155,66,0.4); color: #a15c12; }
+      /* Metrics row */
+      .tc-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .tc-metric {
+        background: var(--ta-linen-soft);
+        border: 1px solid var(--ta-border);
+        border-radius: 10px;
+        padding: 8px 6px;
         text-align: center;
       }
-      .wave-card .wave-metric .m-num {
+      .tc-metric .m-num {
         font-size: 1.15rem;
         font-weight: 800;
         color: var(--ta-ink);
+        line-height: 1.1;
       }
-      .wave-card .wave-metric .m-lbl {
-        font-size: 0.66rem;
+      .tc-metric .m-lbl {
+        font-size: 0.62rem;
         color: var(--ta-gray);
         text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-top: 2px;
       }
-      .wave-card .wave-date {
-        margin-top: 10px;
-        font-size: 0.72rem;
+      /* Footer */
+      .tc-footer {
+        font-size: 0.7rem;
         color: var(--ta-gray-soft);
+        border-top: 1px solid var(--ta-border);
+        padding-top: 8px;
+        margin-top: 2px;
       }
+      /* Legacy aliases kept so old selectors don't break */
+      .wave-card h4, .sess-card h4 { display:none; }
+      .wave-card .wave-trainer, .wave-card .wave-metrics,
+      .wave-card .wave-metric, .wave-card .wave-date,
+      .sess-card .s-trainer, .sess-card .s-tags,
+      .sess-card .s-metrics, .sess-card .wave-date { display:none; }
       .empty-note {
         color: var(--ta-gray-soft);
         font-size: 0.88rem;
@@ -1938,8 +2017,8 @@
       .rec-table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.84rem;
-        min-width: 980px;
+        font-size: 0.82rem;
+        min-width: 1400px;
       }
       .rec-table thead th {
         background: var(--ta-ink);
@@ -2408,37 +2487,6 @@
         gap: 8px;
       }
 
-      .sess-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-        gap: 12px;
-      }
-      .sess-card {
-        border: 1.5px solid var(--ta-border);
-        border-radius: 14px;
-        padding: 14px;
-        background: #fff;
-      }
-      .sess-card h4 {
-        margin: 0 0 4px;
-        font-size: 1rem;
-        color: var(--ta-ink);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .sess-card .s-trainer {
-        font-size: 0.8rem;
-        color: var(--ta-green-dark);
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-      .sess-card .s-tags {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-      }
       .s-chip {
         font-size: 0.68rem;
         font-weight: 700;
@@ -2448,15 +2496,8 @@
         border: 1px solid var(--ta-border);
         color: var(--ta-gray);
       }
-      .sess-card .s-metrics {
-        display: flex;
-        gap: 14px;
-      }
-      .sess-card .m-num {
-        font-size: 1.1rem;
-        font-weight: 800;
-      }
-      .sess-card .m-lbl {
+      /* placeholder to keep closing brace balanced */
+      ._placeholder_sess {
         font-size: 0.64rem;
         color: var(--ta-gray);
         text-transform: uppercase;
@@ -2510,6 +2551,21 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8px;
+      }
+
+      /* session question policy row */
+      .sq-policy-row {
+        margin-bottom: 8px;
+      }
+      .sq-policy-row select {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1.5px solid var(--ta-amber);
+        border-radius: 9px;
+        font-size: 0.84rem;
+        font-family: inherit;
+        background: #fffaf4;
+        margin-top: 4px;
       }
 
       /* collapsible detail row */
@@ -3006,12 +3062,7 @@
         filter: brightness(1.06);
         transform: translateY(-1px);
       }
-      .wave-card {
-        border-left: 4px solid var(--ta-green-dark);
-      }
-      .sess-card {
-        border-left: 4px solid var(--ta-amber);
-      }
+      /* wave/sess card accent now handled by border-top in wave-grid block above */
       .sess-card .s-chip {
         border-color: rgba(248, 155, 66, 0.5);
         color: #a15c12;
@@ -3335,6 +3386,170 @@
           justify-content: center;
         }
       }
+
+      /* ═══════════ LEVEL FLIP CARDS ═══════════ */
+      .lfc-section {
+        margin: 24px 0 8px;
+        padding: 0 4px;
+      }
+      .lfc-heading {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--ta-ink);
+        margin-bottom: 14px;
+        text-align: center;
+        letter-spacing: 0.01em;
+      }
+      .lfc-grid {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .lfc-wrap {
+        perspective: 900px;
+        width: 175px;
+        height: 220px;
+      }
+      .lfc {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+        cursor: pointer;
+        border-radius: 16px;
+      }
+      .lfc.flipped { transform: rotateY(180deg); }
+      .lfc-front,
+      .lfc-back {
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 18px 14px 14px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+        border: 1.5px solid rgba(0,0,0,0.07);
+      }
+      .lfc-back { background: #fff; transform: rotateY(180deg); }
+      .lfc-emoji { font-size: 2rem; line-height: 1; }
+      .lfc-label {
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .lfc-score {
+        font-size: 2.2rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .lfc-result {
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 3px 12px;
+        border-radius: 999px;
+      }
+      .lfc-pass { color: #00a870; background: rgba(0,168,112,0.10); }
+      .lfc-fail { color: #e05454; background: rgba(224,84,84,0.10); }
+      .lfc-hint-line {
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: #555;
+        margin-top: 6px;
+        letter-spacing: 0.02em;
+        background: rgba(0,0,0,0.06);
+        padding: 4px 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,0.10);
+      }
+      /* Back side */
+      .lfc-back-title {
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+      .lfc-detail-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 0.78rem;
+        padding: 5px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .lfc-dl { color: #888; font-weight: 600; }
+      .lfc-dv { font-weight: 800; color: var(--ta-ink); }
+
+      /* ═══════════ SCRATCH CARD (overall score) ═══════════ */
+      .scratch-section {
+        margin: 22px auto 0;
+        text-align: center;
+        max-width: 360px;
+      }
+      .scratch-label {
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: var(--ta-ink);
+        margin-bottom: 10px;
+        letter-spacing: 0.02em;
+      }
+      .scratch-wrap {
+        position: relative;
+        width: 320px;
+        height: 140px;
+        margin: 0 auto;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+        cursor: crosshair;
+      }
+      .scratch-reveal {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        background: linear-gradient(135deg, #e8faf3 0%, #d0f5e6 100%);
+        border-radius: 18px;
+        padding: 16px;
+      }
+      .scratch-pct {
+        font-size: 3.2rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .scratch-status {
+        font-size: 0.88rem;
+        font-weight: 800;
+        padding: 4px 14px;
+        border-radius: 999px;
+      }
+      .scratch-sub {
+        font-size: 0.7rem;
+        color: #888;
+        font-weight: 600;
+      }
+      .scratch-canvas {
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        transition: opacity 0.6s ease;
+        cursor: crosshair;
+      }
+      .scratch-done .scratch-canvas {
+        pointer-events: none;
+      }
+
     </style>
   </head>
 
@@ -3598,12 +3813,17 @@
                   <th>Trainer</th>
                   <th>Wave</th>
                   <th>Session</th>
+                  <th>Queue</th>
                   <th>Attempt #</th>
-                  <th>Score</th>
-                  <th>Correct</th>
-                  <th>Percentage</th>
+                  <th>Overall Score</th>
+                  <th>Correct Answers</th>
+                  <th>Level 1 Score</th>
+                  <th>Level 2 Score</th>
+                  <th>Level 3 Score</th>
                   <th>HTQ</th>
                   <th>Result</th>
+                  <th>Right Answer (Policy)</th>
+                  <th>Selected Reason</th>
                   <th>Date &amp; Time</th>
                   <th>Details</th>
                 </tr>
@@ -3778,10 +3998,12 @@
                 </div>
               </div>
             </div>
+            <!-- Hint button removed from all queues -->
             <button
-              class="quick-tip-btn"
+              class="quick-tip-btn hidden"
               id="quickTipBtn"
               onclick="toggleQuickTip()"
+              style="display:none;"
             >
               💡 Need a hint?
             </button>
@@ -4164,7 +4386,9 @@
       let activeQueue = "reported";
       let lifelinesEnabled = true;
       let perQuestionTime = 60;
-      let levelResults = {};
+      let levelResults  = {};   // { 1: pct, 2: pct, 3: pct }
+      let levelHints    = {};   // { 1: count, 2: count, 3: count }
+      let levelScores   = {};   // { 1: rawScore, 2: rawScore, 3: rawScore }
 
       // Configuration
       const defaultConfig = {
@@ -5358,7 +5582,7 @@
         },
         {
             property: 'Emirates Palace Mandarin Oriental,',
-          image: `<img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/1a186530047003.561116ca298f7.jpg" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
+          image: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emirates_Palace_Hotel_Abu_Dhabi.jpg/1280px-Emirates_Palace_Hotel_Abu_Dhabi.jpg" alt="Photo Quality content" loading="lazy" data-cat="quality" style="filter:blur(2.4px);transform:scale(1.05)" onerror="handleImgError(this)">`,
           scenario: "Incoming L3, item 2",
           tip: "Check the content against the platform policies before deciding.",
           correct: "remove",
@@ -5692,15 +5916,21 @@
       }
 
       function normalizeRecord(r) {
+        // Normalize queue value: trim and lowercase for consistent comparison
+        var rawQueue = String(r.queue || "").trim().toLowerCase();
+        var queue = rawQueue === "incoming" ? "incoming" : rawQueue === "reported" ? "reported" : rawQueue;
+        // completed_at: preserve as-is — could be ISO string or Sheets serial
+        var completedAt = r.completed_at;
+        if (completedAt === null || completedAt === undefined) completedAt = "";
         return {
           attempt_id: r.attempt_id || "",
-          employee_id: r.employee_id || "",
+          employee_id: String(r.employee_id || "").trim(),
           name: r.name || "",
           country: r.country || "",
           trainer_name: r.trainer_name || "",
           wave: r.wave || "",
           session: r.session || "",
-          queue: r.queue || "",
+          queue: queue,
           level: r.level || "",
           attempt_number: r.attempt_number || 1,
           score: normNum(r.score),
@@ -5710,7 +5940,13 @@
           htq: normNum(r.htq),
           result: r.result || "In Progress",
           responses: r.responses || "[]",
-          completed_at: r.completed_at || "",
+          completed_at: completedAt,
+          level1_score: r.level1_score !== undefined && r.level1_score !== "" ? normNum(r.level1_score) : "",
+          level2_score: r.level2_score !== undefined && r.level2_score !== "" ? normNum(r.level2_score) : "",
+          level3_score: r.level3_score !== undefined && r.level3_score !== "" ? normNum(r.level3_score) : "",
+          level1_pct:   r.level1_pct   !== undefined && r.level1_pct   !== "" ? normNum(r.level1_pct)   : "",
+          level2_pct:   r.level2_pct   !== undefined && r.level2_pct   !== "" ? normNum(r.level2_pct)   : "",
+          level3_pct:   r.level3_pct   !== undefined && r.level3_pct   !== "" ? normNum(r.level3_pct)   : "",
         };
       }
 
@@ -6163,6 +6399,8 @@
         currentCountry = country;
         currentTrainer = trainer;
         levelResults = {};
+        levelHints   = {};
+        levelScores  = {};
 
         if (session) {
           if (session === "Test") {
@@ -6298,79 +6536,50 @@
       function renderTools() {
         const grid = document.getElementById("toolsGrid");
         if (!cache.waves.length && !cache.sessions.length) {
-          grid.innerHTML =
-            '<div class="empty-note">No waves or sessions yet. Use “＋ Create Wave” or “＋ Create Session” · created items appear here and in the login dropdowns.</div>';
+          grid.innerHTML = '<div class="empty-note">No waves or sessions yet. Use "＋ Create Wave" or "＋ Create Session" · created items appear here and in the login dropdowns.</div>';
           return;
         }
         let html = "";
-        cache.waves.forEach((w) => {
-          const recs = cache.records.filter((r) => r.wave === w.wave_name);
-          const people = new Set(recs.map((r) => r.employee_id)).size;
-          const created = w.created_at
-            ? new Date(w.created_at).toLocaleDateString()
-            : "·";
-          html +=
-            '<div class="wave-card"><h4>🌊 ' +
-            esc(w.wave_name) +
-            "</h4>" +
-            '<div class="wave-trainer">👤 ' +
-            esc(w.trainer_name || "·") +
-            "</div>" +
-            '<div class="wave-metrics">' +
-            '<div class="wave-metric"><div class="m-num">' +
-            people +
-            '</div><div class="m-lbl">Attended</div></div>' +
-            '<div class="wave-metric"><div class="m-num">' +
-            recs.length +
-            '</div><div class="m-lbl">Attempts</div></div>' +
-            '<div class="wave-metric"><div class="m-num">' +
-            (w.question_count || 30) +
-            '</div><div class="m-lbl">Questions</div></div>' +
-            '</div><div class="wave-date">📅 Created ' +
-            created +
-            "</div></div>";
+        cache.waves.forEach(function(w) {
+          const recs = cache.records.filter(function(r){ return r.wave === w.wave_name; });
+          const people = new Set(recs.map(function(r){ return r.employee_id; })).size;
+          const created = w.created_at ? new Date(w.created_at).toLocaleDateString() : "·";
+          html += '<div class="wave-card">'
+            + '<div class="tc-header"><div class="tc-icon">🌊</div>'
+            + '<div class="tc-title-block"><div class="tc-name">' + esc(w.wave_name) + '</div>'
+            + '<div class="tc-trainer">👤 ' + esc(w.trainer_name || "·") + '</div></div></div>'
+            + '<div class="tc-tags"><span class="tc-tag green">Wave</span>'
+            + '<span class="tc-tag">📊 ' + (w.question_count || 30) + ' questions</span></div>'
+            + '<div class="tc-metrics">'
+            + '<div class="tc-metric"><div class="m-num">' + people + '</div><div class="m-lbl">Attended</div></div>'
+            + '<div class="tc-metric"><div class="m-num">' + recs.length + '</div><div class="m-lbl">Attempts</div></div>'
+            + '<div class="tc-metric"><div class="m-num">' + (w.question_count || 30) + '</div><div class="m-lbl">Questions</div></div>'
+            + '</div><div class="tc-footer">📅 Created ' + created + '</div></div>';
         });
-        cache.sessions.forEach((sn) => {
-          const recs = cache.records.filter(
-            (r) => r.session === sn.session_name,
-          );
-          const people = new Set(recs.map((r) => r.employee_id)).size;
-          const created = sn.created_at
-            ? new Date(sn.created_at).toLocaleDateString()
-            : "·";
-          const qn =
-            (sn.questions && sn.questions.length) || sn.question_count || 0;
-          html +=
-            '<div class="sess-card"><h4>🎬 ' +
-            esc(sn.session_name) +
-            "</h4>" +
-            '<div class="s-trainer">👤 ' +
-            esc(sn.trainer_name || "·") +
-            "</div>" +
-            '<div class="s-tags"><span class="s-chip">' +
-            (sn.queue === "incoming" ? "Incoming" : "Reported") +
-            "</span>" +
-            '<span class="s-chip">⏱ ' +
-            (sn.time || 60) +
-            "s/q</span></div>" +
-            '<div class="s-metrics">' +
-            '<div><div class="m-num">' +
-            people +
-            '</div><div class="m-lbl">Attended</div></div>' +
-            '<div><div class="m-num">' +
-            recs.length +
-            '</div><div class="m-lbl">Attempts</div></div>' +
-            '<div><div class="m-num">' +
-            qn +
-            '</div><div class="m-lbl">Questions</div></div>' +
-            '</div><div class="wave-date">📅 Created ' +
-            created +
-            "</div></div>";
+        cache.sessions.forEach(function(sn) {
+          const recs = cache.records.filter(function(r){ return r.session === sn.session_name; });
+          const people = new Set(recs.map(function(r){ return r.employee_id; })).size;
+          const created = sn.created_at ? new Date(sn.created_at).toLocaleDateString() : "·";
+          const qn = (sn.questions && sn.questions.length) || sn.question_count || 0;
+          const queueLabel = sn.queue === "incoming" ? "Incoming" : "Reported";
+          html += '<div class="sess-card">'
+            + '<div class="tc-header"><div class="tc-icon">🎬</div>'
+            + '<div class="tc-title-block"><div class="tc-name">' + esc(sn.session_name) + '</div>'
+            + '<div class="tc-trainer">👤 ' + esc(sn.trainer_name || "·") + '</div></div></div>'
+            + '<div class="tc-tags"><span class="tc-tag amber">Session</span>'
+            + '<span class="tc-tag">' + queueLabel + '</span>'
+            + '<span class="tc-tag">⏱ ' + (sn.time || 60) + 's/q</span>'
+            + '<span class="tc-tag">📊 ' + qn + ' questions</span></div>'
+            + '<div class="tc-metrics">'
+            + '<div class="tc-metric"><div class="m-num">' + people + '</div><div class="m-lbl">Attended</div></div>'
+            + '<div class="tc-metric"><div class="m-num">' + recs.length + '</div><div class="m-lbl">Attempts</div></div>'
+            + '<div class="tc-metric"><div class="m-num">' + qn + '</div><div class="m-lbl">Questions</div></div>'
+            + '</div><div class="tc-footer">📅 Created ' + created + '</div></div>';
         });
         grid.innerHTML = html;
       }
 
-      // ---- stats ----
+            // ---- stats ----
       function renderStats() {
         const recs = cache.records;
         const done = recs.filter((r) => r.result !== "In Progress");
@@ -6466,22 +6675,48 @@
           .classList.remove("hidden");
         setTimeout(() => document.getElementById("sessName").focus(), 60);
       }
+      const REMOVE_POLICIES = [
+        "Photo Quality","Commercial","Duplicate","Illegal Activity",
+        "Irrelevant","Non-Original","Privacy","Graphic","Sexually Explicit","Caption"
+      ];
+
       function addSessionQuestion() {
         sessQIndex++;
         const wrap = document.createElement("div");
         wrap.className = "sess-q";
+        const policyOptions = REMOVE_POLICIES.map(function(p){
+          return '<option value="' + p + '">' + p + '</option>';
+        }).join('');
         wrap.innerHTML =
           '<div class="sess-q-top"><span>Question <span class="q-ord"></span></span>' +
           '<button class="rm-q" onclick="removeSessionQuestion(this)">✕ Remove</button></div>' +
           '<input class="sq-image" placeholder="Image URL (https://...)" autocomplete="off">' +
           '<input class="sq-scenario" placeholder="Caption / scenario (shown for Reported queue)" autocomplete="off">' +
           '<div class="sq-two">' +
-          '<select class="sq-correct"><option value="publish">Correct: Publish</option><option value="remove">Correct: Remove</option><option value="escalate">Correct: Escalate</option></select>' +
+          '<select class="sq-correct" onchange="togglePolicyRow(this)">' +
+          '<option value="publish">Correct Answer: Publish</option>' +
+          '<option value="remove">Correct Answer: Remove</option>' +
+          '<option value="escalate">Correct Answer: Escalate</option>' +
+          '</select>' +
           '<input class="sq-fc" placeholder="Feedback when correct" autocomplete="off">' +
           "</div>" +
+          '<div class="sq-policy-row" style="display:none;">' +
+          '<label style="font-size:0.78rem;font-weight:700;color:var(--ta-ink);margin-bottom:4px;display:block;">Remove Policy (correct reason)</label>' +
+          '<select class="sq-policy">' +
+          '<option value="">-- Select removal policy --</option>' +
+          policyOptions +
+          '</select>' +
+          '</div>' +
           '<input class="sq-fw" placeholder="Feedback when wrong" autocomplete="off">';
         document.getElementById("sessQuestions").appendChild(wrap);
         renumberSessionQuestions();
+      }
+
+      function togglePolicyRow(sel) {
+        const wrap = sel.closest(".sess-q");
+        if (!wrap) return;
+        const row = wrap.querySelector(".sq-policy-row");
+        if (row) row.style.display = sel.value === "remove" ? "block" : "none";
       }
       function removeSessionQuestion(btn) {
         const q = btn.closest(".sess-q");
@@ -6528,14 +6763,21 @@
           const correct = b.querySelector(".sq-correct").value;
           const fc = b.querySelector(".sq-fc").value.trim();
           const fw = b.querySelector(".sq-fw").value.trim();
+          const policyEl = b.querySelector(".sq-policy");
+          const policy = policyEl ? policyEl.value.trim() : "";
           if (!image) {
             err.textContent = "Every question needs an image URL.";
+            return;
+          }
+          if (correct === "remove" && !policy) {
+            err.textContent = "Please select a removal policy for each 'Remove' question.";
             return;
           }
           questions.push({
             image,
             scenario,
             correct,
+            policy: correct === "remove" ? policy : "",
             feedbackCorrect: fc,
             feedbackWrong: fw,
           });
@@ -6665,113 +6907,267 @@
         }
         if (!responses.length)
           return '<div class="empty-note">No per-question responses recorded for this attempt.</div>';
-        const rows = responses
-          .map((rp) => {
+
+        // Summary header
+        const totalQ = responses.length;
+        const correctQ = responses.filter(function(rp){ return rp.isCorrect; }).length;
+        const totalScore = correctQ * 10;
+        const maxPossible = totalQ * 10;
+        const summaryHtml =
+          '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">' +
+          '<div style="background:var(--ta-green-soft);border:1px solid rgba(0,168,112,0.3);border-radius:10px;padding:8px 14px;text-align:center;">' +
+          '<div style="font-size:1.2rem;font-weight:800;color:var(--ta-green-dark);">' + totalScore + '/' + maxPossible + '</div>' +
+          '<div style="font-size:0.68rem;text-transform:uppercase;color:var(--ta-green-dark);letter-spacing:0.04em;">Score Secured</div>' +
+          '</div>' +
+          '<div style="background:var(--ta-linen-soft);border:1px solid var(--ta-border);border-radius:10px;padding:8px 14px;text-align:center;">' +
+          '<div style="font-size:1.2rem;font-weight:800;color:var(--ta-ink);">' + correctQ + '/' + totalQ + '</div>' +
+          '<div style="font-size:0.68rem;text-transform:uppercase;color:var(--ta-gray);letter-spacing:0.04em;">Correct</div>' +
+          '</div>' +
+          '<div style="background:var(--ta-linen-soft);border:1px solid var(--ta-border);border-radius:10px;padding:8px 14px;text-align:center;">' +
+          '<div style="font-size:1.2rem;font-weight:800;color:var(--ta-ink);">' + (totalQ - correctQ) + '/' + totalQ + '</div>' +
+          '<div style="font-size:0.68rem;text-transform:uppercase;color:var(--ta-gray);letter-spacing:0.04em;">Wrong</div>' +
+          '</div>' +
+          '</div>';
+
+        const rows = responses.map(function(rp) {
             const ok = rp.isCorrect
               ? '<span class="resp-tag resp-ok">✓ Correct</span>'
-              : '<span class="resp-tag resp-no">✕ Wrong</span>';
-            const reason = rp.reason ? " (" + esc(rp.reason) + ")" : "";
+              : (rp.choice === "timeout"
+                  ? '<span class="resp-tag" style="background:rgba(248,155,66,0.16);color:#b56a17;">⏰ Timeout</span>'
+                  : '<span class="resp-tag resp-no">✕ Wrong</span>');
+            const scorePts = rp.isCorrect ? '+10' : '0';
+            const scoreStyle = rp.isCorrect
+              ? 'color:var(--ta-green-dark);font-weight:800;'
+              : 'color:var(--ta-coral);font-weight:600;';
+            // Candidate's answer (action chosen)
+            const chosenAction = rp.choice === "timeout"
+              ? '<em style="color:var(--ta-gray-soft);">Timed out</em>'
+              : '<strong>' + esc((rp.choice || "").toUpperCase()) + '</strong>';
+            // Candidate's reason (policy they selected, only if they chose Remove)
+            const candidateReason = rp.reason && rp.reason.trim()
+              ? '<span style="color:var(--ta-coral);">' + esc(rp.reason) + '</span>'
+              : '<span style="color:var(--ta-gray-soft);">—</span>';
+            // Correct answer
+            const correctAction = '<strong>' + esc((rp.correct || "").toUpperCase()) + '</strong>';
+            // Correct policy (only relevant when correct answer is REMOVE)
+            const rightPolicy = rp.correctPolicy && rp.correctPolicy.trim()
+              ? '<span style="color:var(--ta-green-dark);font-weight:700;">' + esc(rp.correctPolicy) + '</span>'
+              : '<span style="color:var(--ta-gray-soft);">—</span>';
+            const timeTaken = rp.t != null ? rp.t + 's' : '·';
             return (
-              "<tr><td>" +
-              rp.n +
-              "</td><td>" +
-              esc(rp.scenario || "") +
-              "</td>" +
-              "<td>" +
-              esc((rp.choice || "").toUpperCase()) +
-              reason +
-              "</td>" +
-              "<td>" +
-              esc((rp.correct || "").toUpperCase()) +
-              "</td>" +
-              "<td>" +
-              ok +
-              "</td><td>" +
-              (rp.t != null ? rp.t + "s" : "·") +
-              "</td></tr>"
+              "<tr>" +
+              "<td style='font-weight:700;text-align:center;'>" + rp.n + "</td>" +
+              "<td>" + esc(rp.scenario || ("Item " + rp.n)) + "</td>" +
+              "<td style='text-align:center;'>" + chosenAction + "</td>" +
+              "<td style='text-align:center;'>" + candidateReason + "</td>" +
+              "<td style='text-align:center;'>" + correctAction + "</td>" +
+              "<td style='text-align:center;'>" + rightPolicy + "</td>" +
+              "<td style='text-align:center;'>" + ok + "</td>" +
+              "<td style='" + scoreStyle + "text-align:center;'>" + scorePts + "</td>" +
+              "<td style='text-align:center;'>" + timeTaken + "</td>" +
+              "</tr>"
             );
-          })
-          .join("");
-        return (
-          '<table class="det-table"><thead><tr><th>#</th><th>Question</th><th>Chosen</th><th>Correct</th><th>Result</th><th>Time</th></tr></thead><tbody>' +
+          }).join("");
+
+        return summaryHtml +
+          '<table class="det-table"><thead><tr>' +
+          '<th style="text-align:center;">#</th>' +
+          '<th>Scenario</th>' +
+          '<th>Candidate Answer</th>' +
+          '<th>Candidate Reason</th>' +
+          '<th>Correct Answer</th>' +
+          '<th>Right Policy</th>' +
+          '<th>Result</th>' +
+          '<th style="text-align:center;">Score</th>' +
+          '<th style="text-align:center;">Time Taken</th>' +
+          '</tr></thead><tbody>' +
           rows +
-          "</tbody></table>"
-        );
+          "</tbody></table>";
       }
+      // Precomputed map: empId (lowercase trimmed) -> Set of queues
+      // Built once before renderTable runs, so every row lookup is O(1)
+      var _queueMap = {};
+      function buildQueueMap(rows) {
+        _queueMap = {};
+        // Use ALL cache.records (not just filtered rows) for completeness
+        var allRecs = (cache.records || []).concat(rows || []);
+        allRecs.forEach(function(r) {
+          var empId = String(r.employee_id || "").trim();
+          if (!empId) return;
+          var q = String(r.queue || "").toLowerCase().trim();
+          if (q !== "incoming" && q !== "reported") return;
+          if (!_queueMap[empId]) _queueMap[empId] = new Set();
+          _queueMap[empId].add(q);
+        });
+      }
+      function queuesCompleted(empId) {
+        var empId_str = String(empId || "").trim();
+        if (!empId_str) return "·";
+        var qs = _queueMap[empId_str];
+        if (!qs || !qs.size) return "·";
+        var labels = [];
+        if (qs.has("incoming")) labels.push("Incoming");
+        if (qs.has("reported")) labels.push("Reported");
+        return labels.length ? labels.join(" + ") : "·";
+      }
+
+      function formatDateSafe(val) {
+        // Returns "DD/MM/YYYY HH:MM" or "·" if unparseable
+        if (val === null || val === undefined) return "·";
+        var v = val;
+        var d;
+        // Google Sheets serial (number): days since Dec 30 1899
+        if (typeof v === "number" && v > 0) {
+          d = new Date((v - 25569) * 86400000);
+          if (!isNaN(d.getTime())) return _fmtDate(d);
+          return "·";
+        }
+        var s = String(v).trim();
+        if (!s || s === "Invalid Date" || s === "null" || s === "undefined") return "·";
+        // ISO 8601: 2026-08-25T10:30:00.000Z
+        d = new Date(s);
+        if (!isNaN(d.getTime())) return _fmtDate(d);
+        // "M/D/YYYY, H:MM:SS AM/PM" (en-US locale)
+        var m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})[, ]+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)?$/i);
+        if (m) {
+          var hr2 = parseInt(m[4], 10);
+          var ampm = m[7] ? m[7].toUpperCase() : "";
+          if (ampm === "PM" && hr2 < 12) hr2 += 12;
+          if (ampm === "AM" && hr2 === 12) hr2 = 0;
+          d = new Date(parseInt(m[3],10), parseInt(m[1],10)-1, parseInt(m[2],10),
+                       hr2, parseInt(m[5],10), m[6] ? parseInt(m[6],10) : 0);
+          if (!isNaN(d.getTime())) return _fmtDate(d);
+        }
+        // "DD/MM/YYYY HH:MM" or "DD/MM/YYYY, HH:MM"
+        var m2 = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})[, ]+(\d{1,2}):(\d{2})/);
+        if (m2) {
+          d = new Date(parseInt(m2[3],10), parseInt(m2[2],10)-1, parseInt(m2[1],10),
+                       parseInt(m2[4],10), parseInt(m2[5],10));
+          if (!isNaN(d.getTime())) return _fmtDate(d);
+        }
+        // "YYYY-MM-DD" (date only, no time)
+        var m3 = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (m3) {
+          d = new Date(parseInt(m3[1],10), parseInt(m3[2],10)-1, parseInt(m3[3],10));
+          if (!isNaN(d.getTime())) return _fmtDate(d);
+        }
+        return "·";
+      }
+      function _fmtDate(d) {
+        var day = String(d.getDate()).padStart(2, "0");
+        var mon = String(d.getMonth() + 1).padStart(2, "0");
+        var yr  = d.getFullYear();
+        var hr  = String(d.getHours()).padStart(2, "0");
+        var mi  = String(d.getMinutes()).padStart(2, "0");
+        return day + "/" + mon + "/" + yr + " " + hr + ":" + mi;
+      }
+
+      function getRightAnswerPolicy(r) {
+        // Parse responses to extract correct answer and correct policy per attempt summary
+        var responses = [];
+        try { responses = JSON.parse(r.responses || "[]"); } catch(e) { responses = []; }
+        if (!responses.length) return "·";
+        // Collect distinct correct answers across all questions
+        var correctAnswers = [];
+        var policySet = {};
+        responses.forEach(function(rp) {
+          var ans = (rp.correct || "").toUpperCase();
+          // If question had a reason (policy), it's embedded in correct being "remove" + policy from question data
+          // We store correctPolicy in responseLog if available
+          var pol = rp.correctPolicy ? rp.correctPolicy : "";
+          if (ans === "REMOVE" && pol) {
+            correctAnswers.push("Remove (" + pol + ")");
+          } else if (ans) {
+            correctAnswers.push(ans);
+          }
+        });
+        if (!correctAnswers.length) return "·";
+        // Return summary: show distinct answers
+        var distinct = correctAnswers.filter(function(v, i, a){ return a.indexOf(v) === i; });
+        return distinct.slice(0, 3).join(", ") + (distinct.length > 3 ? "…" : "");
+      }
+
+      function getSelectedReason(r) {
+        var responses = [];
+        try { responses = JSON.parse(r.responses || "[]"); } catch(e) { responses = []; }
+        if (!responses.length) return "·";
+        var reasons = [];
+        responses.forEach(function(rp) {
+          if (rp.reason && rp.reason.trim()) {
+            reasons.push(rp.reason);
+          }
+        });
+        if (!reasons.length) return "·";
+        var distinct = reasons.filter(function(v, i, a){ return a.indexOf(v) === i; });
+        return distinct.slice(0, 3).join(", ") + (distinct.length > 3 ? "…" : "");
+      }
+
+      function lvlScoreCell(raw, pct) {
+        // Show "80 pts · 80%" or "·" if not recorded
+        if (raw === "" || raw === undefined || raw === null) return "<span style='color:#ccc'>·</span>";
+        var p = pct !== "" && pct !== undefined && pct !== null ? pct + "%" : "";
+        var color = normNum(pct) >= 80 ? "color:var(--ta-green-dark);font-weight:800;" : "color:var(--ta-coral);font-weight:700;";
+        return "<span style='" + color + "'>" + raw + " pts</span>" + (p ? "<br><small style='color:#888'>" + p + "</small>" : "");
+      }
+
       function renderTable(rows) {
         const body = document.getElementById("recTableBody");
         if (!rows.length) {
           body.innerHTML =
-            '<tr><td colspan="15" style="text-align:center;color:var(--ta-gray-soft);padding:22px;">No records match the current filters.</td></tr>';
+            '<tr><td colspan="20" style="text-align:center;color:var(--ta-gray-soft);padding:22px;">No records match the current filters.</td></tr>';
           return;
         }
         body.innerHTML = rows
-          .map((r, i) => {
-            const dt = r.completed_at
-              ? new Date(r.completed_at).toLocaleString()
-              : "·";
-            const pct = r.result === "In Progress" ? "·" : r.percentage + "%";
+          .map(function(r, i) {
+            const dt = formatDateSafe(r.completed_at);
+            const scorePct = normNum(r.percentage);
+            const scoreDisplay = scorePct + "%";
+            const rawQ = String(r.queue || "").toLowerCase().trim();
+            const queueLabel = rawQ === "incoming" ? "Incoming"
+                             : rawQ === "reported" ? "Reported"
+                             : r.queue ? String(r.queue) : "·";
+            const queueBadgeClass = rawQ === "incoming" ? "badge-prog" : "badge-pass";
+            const cCount = normNum(r.correct);
+            const tCount = normNum(r.total_questions);
+            var dispCorrect, dispTotal;
+            if (tCount > 0 && cCount <= tCount) { dispCorrect = cCount; dispTotal = tCount; }
+            else if (cCount > 0 && tCount <= cCount) { dispCorrect = tCount; dispTotal = cCount; }
+            else { dispCorrect = cCount; dispTotal = tCount || 0; }
+            const correctDisplay = dispCorrect + " / " + dispTotal;
+            const rightAns  = getRightAnswerPolicy(r);
+            const selReason = getSelectedReason(r);
+            // Level scores
+            const l1 = lvlScoreCell(r.level1_score, r.level1_pct);
+            const l2 = lvlScoreCell(r.level2_score, r.level2_pct);
+            const l3 = lvlScoreCell(r.level3_score, r.level3_pct);
             const main =
               "<tr>" +
-              "<td>" +
-              (i + 1) +
-              "</td>" +
-              "<td>" +
-              esc(r.employee_id) +
-              "</td>" +
-              '<td class="wrap">' +
-              esc(r.name) +
-              "</td>" +
-              "<td>" +
-              esc(r.country) +
-              "</td>" +
-              '<td class="wrap">' +
-              esc(r.trainer_name) +
-              "</td>" +
-              "<td>" +
-              esc(r.wave || "·") +
-              "</td>" +
-              "<td>" +
-              esc(r.session || "·") +
-              "</td>" +
-              "<td>" +
-              r.attempt_number +
-              "</td>" +
-              "<td>" +
-              r.score +
-              "</td>" +
-              "<td>" +
-              r.correct +
-              "/" +
-              r.total_questions +
-              "</td>" +
-              "<td>" +
-              pct +
-              "</td>" +
-              "<td>" +
-              (r.htq || 0) +
-              "s</td>" +
-              "<td>" +
-              resultBadge(r) +
-              "</td>" +
-              '<td class="wrap">' +
-              dt +
-              "</td>" +
-              '<td><button class="btn-details" id="detbtn-' +
-              i +
-              '" onclick="toggleDetails(' +
-              i +
-              ')">View</button></td>' +
+              "<td>" + (i + 1) + "</td>" +
+              "<td>" + esc(r.employee_id) + "</td>" +
+              '<td class="wrap">' + esc(r.name) + "</td>" +
+              "<td>" + esc(r.country) + "</td>" +
+              '<td class="wrap">' + esc(r.trainer_name) + "</td>" +
+              "<td>" + esc(r.wave || "·") + "</td>" +
+              "<td>" + esc(r.session || "·") + "</td>" +
+              "<td><span class='badge " + queueBadgeClass + "'>" + queueLabel + "</span></td>" +
+              "<td>" + (r.attempt_number || 1) + "</td>" +
+              "<td><strong>" + scoreDisplay + "</strong></td>" +
+              "<td>" + correctDisplay + "</td>" +
+              "<td>" + l1 + "</td>" +
+              "<td>" + l2 + "</td>" +
+              "<td>" + l3 + "</td>" +
+              "<td>" + (r.htq || 0) + "s</td>" +
+              "<td>" + resultBadge(r) + "</td>" +
+              '<td class="wrap" style="font-size:0.8rem;">' + esc(rightAns)  + "</td>" +
+              '<td class="wrap" style="font-size:0.8rem;">' + esc(selReason) + "</td>" +
+              '<td class="wrap">' + dt + "</td>" +
+              '<td><button class="btn-details" id="detbtn-' + i + '" onclick="toggleDetails(' + i + ')">View</button></td>' +
               "</tr>";
             const detail =
-              '<tr class="detail-row hidden" id="det-' +
-              i +
-              '"><td colspan="15"><div class="detail-inner">' +
+              '<tr class="detail-row hidden" id="det-' + i +
+              '"><td colspan="20"><div class="detail-inner">' +
               '<div class="di-title">📝 Response breakdown · ' +
-              esc(r.name) +
-              " (" +
-              esc(r.employee_id) +
-              ")</div>" +
+              esc(r.name) + " (" + esc(r.employee_id) + ")</div>" +
               detailTable(r) +
               "</div></td></tr>";
             return main + detail;
@@ -6796,75 +7192,175 @@
         return v;
       }
       function rowsToCsv(rows) {
+        // CSV fallback (used only if XLSX unavailable)
         const headers = [
-          "#",
-          "Employee ID",
-          "Name",
-          "Country",
-          "Trainer",
-          "Wave",
-          "Session",
-          "Queue",
-          "Attempt #",
-          "Score",
-          "Correct",
-          "Total Questions",
-          "Percentage",
-          "HTQ (s)",
-          "Result",
-          "Date & Time",
-          "Responses (JSON)",
+          "#","Employee ID","Name","Country","Trainer","Wave","Session","Queue",
+          "Attempt #","Overall Score (%)","Correct Answers",
+          "Level 1 Score","Level 1 %","Level 2 Score","Level 2 %","Level 3 Score","Level 3 %",
+          "HTQ (s)","Result","Right Answer (Policy)","Selected Reason","Date & Time",
         ];
         const lines = [headers.map(csvEscape).join(",")];
-        rows.forEach((r, i) => {
-          lines.push(
-            [
-              i + 1,
-              r.employee_id,
-              r.name,
-              r.country,
-              r.trainer_name,
-              r.wave,
-              r.session,
-              r.queue,
-              r.attempt_number,
-              r.score,
-              r.correct,
-              r.total_questions,
-              r.result === "In Progress" ? "" : r.percentage,
-              r.htq,
-              r.result,
-              r.completed_at ? new Date(r.completed_at).toLocaleString() : "",
-              r.responses,
-            ]
-              .map(csvEscape)
-              .join(","),
-          );
+        rows.forEach(function(r, i) {
+          const rawQ = String(r.queue || "").toLowerCase().trim();
+          const queueLabel = rawQ === "incoming" ? "Incoming" : rawQ === "reported" ? "Reported" : (r.queue || "");
+          const dt = formatDateSafe(r.completed_at);
+          const cCount = normNum(r.correct); const tCount = normNum(r.total_questions);
+          var dispC = cCount, dispT = tCount;
+          if (tCount > 0 && cCount <= tCount) { dispC = cCount; dispT = tCount; }
+          else if (cCount > 0 && tCount <= cCount) { dispC = tCount; dispT = cCount; }
+          lines.push([
+            i + 1, r.employee_id, r.name, r.country, r.trainer_name, r.wave, r.session,
+            queueLabel, r.attempt_number, normNum(r.percentage) + "%",
+            dispC + "/" + dispT,
+            r.level1_score !== "" && r.level1_score !== undefined ? r.level1_score : "·",
+            r.level1_pct   !== "" && r.level1_pct   !== undefined ? r.level1_pct + "%" : "·",
+            r.level2_score !== "" && r.level2_score !== undefined ? r.level2_score : "·",
+            r.level2_pct   !== "" && r.level2_pct   !== undefined ? r.level2_pct + "%" : "·",
+            r.level3_score !== "" && r.level3_score !== undefined ? r.level3_score : "·",
+            r.level3_pct   !== "" && r.level3_pct   !== undefined ? r.level3_pct + "%" : "·",
+            r.htq, r.result, getRightAnswerPolicy(r), getSelectedReason(r), dt,
+          ].map(csvEscape).join(","));
         });
         return lines.join("\n");
       }
       function downloadCSV(which) {
         const rows = which === "filtered" ? lastFiltered : cache.records;
-        if (!rows.length) {
-          showInlineMessage("No data to export.", "error");
-          return;
+        if (!rows.length) { showInlineMessage("No data to export.", "error"); return; }
+
+        // Try XLSX first (SheetJS loaded via CDN), fall back to CSV
+        if (typeof XLSX !== "undefined") {
+          downloadXLSX(rows, which);
+        } else {
+          // Load SheetJS dynamically then retry
+          const s = document.createElement("script");
+          s.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
+          s.onload = function() { downloadXLSX(rows, which); };
+          s.onerror = function() { downloadCSVFallback(rows, which); };
+          document.head.appendChild(s);
         }
-        const blob = new Blob(["\ufeff" + rowsToCsv(rows)], {
-          type: "text/csv;charset=utf-8;",
-        });
+      }
+
+      function downloadCSVFallback(rows, which) {
+        const blob = new Blob(["\ufeff" + rowsToCsv(rows)], { type: "text/csv;charset=utf-8;" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download =
-          "FotoFunnel_" +
-          (which === "filtered" ? "Filtered" : "All") +
-          "_" +
-          new Date().toISOString().slice(0, 10) +
-          ".csv";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        a.download = "FotoFunnel_" + (which === "filtered" ? "Filtered" : "All") + "_" + new Date().toISOString().slice(0,10) + ".csv";
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
         URL.revokeObjectURL(url);
+      }
+
+      function downloadXLSX(rows, which) {
+        const wb = XLSX.utils.book_new();
+
+        // ── 1. Build data array ────────────────────────────────
+        const HEADERS = [
+          "#","Employee ID","Name","Country","Trainer","Wave","Session","Queue",
+          "Attempt #","Overall Score (%)","Correct Answers",
+          "Level 1 Score","Level 1 %","Level 2 Score","Level 2 %","Level 3 Score","Level 3 %",
+          "HTQ (s)","Result","Right Answer (Policy)","Selected Reason","Date & Time",
+        ];
+        const data = [HEADERS];
+        rows.forEach(function(r, i) {
+          const rawQ = String(r.queue||"").toLowerCase().trim();
+          const qLabel = rawQ==="incoming"?"Incoming":rawQ==="reported"?"Reported":(r.queue||"");
+          const cCount = normNum(r.correct); const tCount = normNum(r.total_questions);
+          var dispC=cCount, dispT=tCount;
+          if (tCount>0&&cCount<=tCount){dispC=cCount;dispT=tCount;}
+          else if(cCount>0&&tCount<=cCount){dispC=tCount;dispT=cCount;}
+          const lv = function(s,p){ return (s!==""&&s!==undefined&&s!==null) ? s+" pts ("+( p!==""&&p!==undefined?p+"%":"·")+")" : "·"; };
+          data.push([
+            i+1, r.employee_id, r.name, r.country, r.trainer_name,
+            r.wave||"·", r.session||"·", qLabel, r.attempt_number||1,
+            normNum(r.percentage)+"%", dispC+"/"+dispT,
+            lv(r.level1_score,r.level1_pct), r.level1_pct!==""&&r.level1_pct!==undefined?normNum(r.level1_pct)+"%":"·",
+            lv(r.level2_score,r.level2_pct), r.level2_pct!==""&&r.level2_pct!==undefined?normNum(r.level2_pct)+"%":"·",
+            lv(r.level3_score,r.level3_pct), r.level3_pct!==""&&r.level3_pct!==undefined?normNum(r.level3_pct)+"%":"·",
+            (r.htq||0)+"s", r.result||"·",
+            getRightAnswerPolicy(r), getSelectedReason(r),
+            formatDateSafe(r.completed_at),
+          ]);
+        });
+
+        // ── 2. Create worksheet ───────────────────────────────
+        const ws = XLSX.utils.aoa_to_sheet(data);
+
+        // ── 3. Column widths ──────────────────────────────────
+        ws["!cols"] = [
+          {wch:5},{wch:14},{wch:20},{wch:12},{wch:18},{wch:16},{wch:18},{wch:11},
+          {wch:10},{wch:14},{wch:14},{wch:18},{wch:10},{wch:18},{wch:10},{wch:18},{wch:10},
+          {wch:9},{wch:12},{wch:22},{wch:22},{wch:18},
+        ];
+
+        // ── 4. Style header row (SheetJS CE has limited styling) ─
+        // We'll use the "s" property supported by xlsx-style fork;
+        // if unsupported it silently falls back to unstyled.
+        const headerStyle = {
+          font:    { bold: true, color: { rgb: "FFFFFF" }, sz: 11 },
+          fill:    { fgColor: { rgb: "04140F" } },
+          alignment: { horizontal: "center", vertical: "center", wrapText: true },
+          border: {
+            bottom: { style: "medium", color: { rgb: "00A870" } },
+          },
+        };
+        const passStyle  = { font:{ color:{ rgb:"006B44" } }, fill:{ fgColor:{ rgb:"E6F9F2" } } };
+        const failStyle  = { font:{ color:{ rgb:"8B1A1A" } }, fill:{ fgColor:{ rgb:"FDE8E8" } } };
+        const progStyle  = { font:{ color:{ rgb:"7C5000" } }, fill:{ fgColor:{ rgb:"FFF8E1" } } };
+        const altStyle   = { fill:{ fgColor:{ rgb:"F5FAF7" } } };
+
+        HEADERS.forEach(function(_, c) {
+          const cellRef = XLSX.utils.encode_cell({ r: 0, c: c });
+          if (ws[cellRef]) ws[cellRef].s = headerStyle;
+        });
+
+        // Row banding + result colouring
+        for (var ri = 1; ri < data.length; ri++) {
+          const result = data[ri][18]; // Result column index
+          for (var ci = 0; ci < HEADERS.length; ci++) {
+            const ref = XLSX.utils.encode_cell({ r: ri, c: ci });
+            if (!ws[ref]) continue;
+            var rowStyle = (ri % 2 === 0) ? altStyle : {};
+            if (ci === 18) { // Result cell gets colour
+              if (result === "Passed")      rowStyle = passStyle;
+              else if (result === "Failed") rowStyle = failStyle;
+              else                          rowStyle = progStyle;
+            }
+            ws[ref].s = rowStyle;
+          }
+        }
+
+        // Freeze header row
+        ws["!freeze"] = { xSplit: 0, ySplit: 1 };
+
+        // ── 5. Add a summary sheet ────────────────────────────
+        const passCount = rows.filter(function(r){ return r.result==="Passed"; }).length;
+        const failCount = rows.filter(function(r){ return r.result==="Failed"; }).length;
+        const progCount = rows.length - passCount - failCount;
+        const avgPct    = rows.length ? Math.round(rows.reduce(function(a,r){ return a+normNum(r.percentage); },0)/rows.length) : 0;
+        const sumData = [
+          ["FotoFunnel Training — Export Summary", ""],
+          ["Generated", formatDateSafe(new Date().toISOString())],
+          ["", ""],
+          ["Metric", "Value"],
+          ["Total Records", rows.length],
+          ["Passed", passCount],
+          ["Failed", failCount],
+          ["In Progress", progCount],
+          ["Pass Rate", rows.length ? Math.round(passCount/rows.length*100)+"%" : "·"],
+          ["Average Score", avgPct+"%"],
+        ];
+        const wsSummary = XLSX.utils.aoa_to_sheet(sumData);
+        wsSummary["!cols"] = [{wch:26},{wch:22}];
+        // Style summary header
+        ["A1","B1"].forEach(function(ref){ if(wsSummary[ref]) wsSummary[ref].s = { font:{bold:true,sz:13,color:{rgb:"04140F"}}, fill:{fgColor:{rgb:"D4F0E4"}} }; });
+        ["A4","B4"].forEach(function(ref){ if(wsSummary[ref]) wsSummary[ref].s = { font:{bold:true,color:{rgb:"FFFFFF"}}, fill:{fgColor:{rgb:"00A870"}} }; });
+
+        // ── 6. Append sheets and write ────────────────────────
+        XLSX.utils.book_append_sheet(wb, wsSummary, "Summary");
+        XLSX.utils.book_append_sheet(wb, ws, "Records");
+        const fname = "FotoFunnel_" + (which==="filtered"?"Filtered":"All") + "_" + new Date().toISOString().slice(0,10) + ".xlsx";
+        XLSX.writeFile(wb, fname);
+        showInlineMessage("✅ Excel file downloaded: " + fname, "success");
       }
 
       function esc(v) {
@@ -6957,7 +7453,10 @@
           htq: 0,
           result: "In Progress",
           responses: "[]",
-          completed_at: "",
+          completed_at: new Date().toISOString(),
+          level1_score: "", level1_pct: "",
+          level2_score: "", level2_pct: "",
+          level3_score: "", level3_pct: "",
         });
 
         showOnly("gameScreen");
@@ -6979,6 +7478,7 @@
           scenario: q.scenario || "",
           tip: "",
           correct: q.correct || "publish",
+          policy: q.policy || "",
           correctExplanation:
             q.feedbackCorrect || "Correct · this is the appropriate action.",
           wrongExplanations: {},
@@ -7021,7 +7521,10 @@
           htq: 0,
           result: "In Progress",
           responses: "[]",
-          completed_at: "",
+          completed_at: new Date().toISOString(),
+          level1_score: "", level1_pct: "",
+          level2_score: "", level2_pct: "",
+          level3_score: "", level3_pct: "",
         });
 
         showOnly("gameScreen");
@@ -7059,13 +7562,8 @@
         }
 
         const tipBtn = document.getElementById("quickTipBtn");
-        if (q.tip) {
-          document.getElementById("quickTip").innerHTML =
-            "💡 Quick Tip: " + q.tip;
-          tipBtn.style.display = "inline-block";
-        } else {
-          tipBtn.style.display = "none";
-        }
+        // Hint button removed for all queues
+        tipBtn.style.display = "none";
         document.getElementById("quickTip").classList.add("hidden");
         tipBtn.textContent = "💡 Need a hint?";
         document.getElementById("resultMessage").classList.add("hidden");
@@ -7125,6 +7623,7 @@
                 choice: "timeout",
                 reason: "",
                 correct: q.correct,
+                correctPolicy: (q.correct === "remove" && q.policy) ? q.policy : "",
                 isCorrect: false,
                 t: t,
               });
@@ -7287,6 +7786,7 @@
           choice: choice,
           reason: removeReason,
           correct: q.correct,
+          correctPolicy: (q.correct === "remove" && q.policy) ? q.policy : "",
           isCorrect: isCorrect,
           t: t,
         });
@@ -7494,6 +7994,12 @@
           result: passed ? "Passed" : "Failed",
           responses: JSON.stringify(responseLog),
           completed_at: new Date().toISOString(),
+          level1_score: levelScores[1] !== undefined ? levelScores[1] : (currentLevel === 1 ? score : ""),
+          level2_score: levelScores[2] !== undefined ? levelScores[2] : (currentLevel === 2 ? score : ""),
+          level3_score: levelScores[3] !== undefined ? levelScores[3] : (currentLevel === 3 ? score : ""),
+          level1_pct:   levelResults[1] !== undefined ? levelResults[1] : (currentLevel === 1 ? percentage : ""),
+          level2_pct:   levelResults[2] !== undefined ? levelResults[2] : (currentLevel === 2 ? percentage : ""),
+          level3_pct:   levelResults[3] !== undefined ? levelResults[3] : (currentLevel === 3 ? percentage : ""),
         });
 
         document.getElementById("certificateSection").classList.add("hidden");
@@ -7523,6 +8029,8 @@
         document.getElementById("resultsHeading").textContent =
           "Assessment Complete";
         levelResults[currentLevel] = percentage;
+        levelHints[currentLevel]   = lifelinesUsed;
+        levelScores[currentLevel]  = score;
         if (passed && !completedLevels.includes(currentLevel))
           completedLevels.push(currentLevel);
 
@@ -7567,6 +8075,9 @@
                 (levelResults[3] || 0)) /
                 3,
             );
+            // Inject level-wise flip card summary into finalResults
+            const fc = document.getElementById("finalResults");
+            fc.innerHTML += buildLevelFlipCards();
             showCertificate(overall, formatTime(timeTaken), activeQueue);
           } else {
             const nb = document.getElementById("nextLevelBtn");
@@ -7575,6 +8086,116 @@
             nb.onclick = () => showLevelSelection();
           }
         }
+      }
+
+      /* ── Level-wise flip-card summary (shown after Level 3 pass) ── */
+      function buildLevelFlipCards() {
+        const levelColors = {
+          1: { bg: "linear-gradient(135deg,#e8f8f2 0%,#c8f0e0 100%)", accent: "#00a870", label: "Level 1", emoji: "🌱" },
+          2: { bg: "linear-gradient(135deg,#fff8e8 0%,#ffe8b0 100%)", accent: "#e8a000", label: "Level 2", emoji: "🔥" },
+          3: { bg: "linear-gradient(135deg,#f0e8ff 0%,#d8c0ff 100%)", accent: "#7c3aed", label: "Level 3", emoji: "🏆" },
+        };
+        let cards = "";
+        for (let L = 1; L <= 3; L++) {
+          const pct    = levelResults[L] || 0;
+          const hints  = levelHints[L]   || 0;
+          const raw    = levelScores[L]  || 0;
+          const maxRaw = 100; // 10 questions × 10 pts
+          const passed = pct >= PASS_MARK;
+          const c      = levelColors[L];
+          cards += `
+            <div class="lfc-wrap">
+              <div class="lfc" onclick="this.classList.toggle('flipped')">
+                <div class="lfc-front" style="background:${c.bg};border-top:4px solid ${c.accent};">
+                  <div class="lfc-emoji">${c.emoji}</div>
+                  <div class="lfc-label" style="color:${c.accent}">${c.label}</div>
+                  <div class="lfc-score" style="color:${passed ? "#00a870" : "#e05454"}">${pct}%</div>
+                  <div class="lfc-result ${passed ? "lfc-pass" : "lfc-fail"}">${passed ? "✓ Passed" : "✕ Failed"}</div>
+                  <div class="lfc-hint-line">👆 Tap to see details</div>
+                </div>
+                <div class="lfc-back" style="border-top:4px solid ${c.accent};">
+                  <div class="lfc-back-title" style="color:${c.accent}">${c.label} · Details</div>
+                  <div class="lfc-detail-row"><span class="lfc-dl">Score</span><span class="lfc-dv">${raw} / ${maxRaw} pts</span></div>
+                  <div class="lfc-detail-row"><span class="lfc-dl">Percentage</span><span class="lfc-dv">${pct}%</span></div>
+                  <div class="lfc-detail-row"><span class="lfc-dl">Lifelines Used</span><span class="lfc-dv">${hints} / 3</span></div>
+                  <div class="lfc-detail-row"><span class="lfc-dl">Status</span><span class="lfc-dv ${passed ? "lfc-pass" : "lfc-fail"}">${passed ? "✓ Passed" : "✕ Failed"}</span></div>
+                  <div class="lfc-hint-line">👆 Tap to flip back</div>
+                </div>
+              </div>
+            </div>`;
+        }
+        // Overall score (average of 3 levels)
+        const overall = Math.round(((levelResults[1]||0)+(levelResults[2]||0)+(levelResults[3]||0))/3);
+        const overallPassed = overall >= PASS_MARK;
+        const scratchId = "scratch-" + Date.now();
+
+        return `<div class="lfc-section">
+          <div class="lfc-heading">📊 Level-by-Level Breakdown</div>
+          <div class="lfc-grid">${cards}</div>
+          <div class="scratch-section">
+            <div class="scratch-label">🎉 Your Overall Score — Scratch to Reveal!</div>
+            <div class="scratch-wrap" id="${scratchId}">
+              <div class="scratch-reveal" style="color:${overallPassed?'#00a870':'#e05454'}">
+                <div class="scratch-pct">${overall}%</div>
+                <div class="scratch-status ${overallPassed?'lfc-pass':'lfc-fail'}">${overallPassed?'🏆 Overall Passed!':'❌ Needs Improvement'}</div>
+                <div class="scratch-sub">Average across all 3 levels</div>
+              </div>
+              <canvas class="scratch-canvas" id="canvas-${scratchId}" width="320" height="140"></canvas>
+            </div>
+          </div>
+        </div>
+        <script>
+        (function(){
+          var wrap = document.getElementById("${scratchId}");
+          var canvas = document.getElementById("canvas-${scratchId}");
+          if(!canvas || !wrap) return;
+          var ctx = canvas.getContext("2d");
+          // Fill scratch layer with silver gradient
+          var grad = ctx.createLinearGradient(0,0,320,140);
+          grad.addColorStop(0,"#c8c8c8");
+          grad.addColorStop(0.5,"#e8e8e8");
+          grad.addColorStop(1,"#b8b8b8");
+          ctx.fillStyle = grad;
+          ctx.fillRect(0,0,320,140);
+          // Scratch text
+          ctx.fillStyle = "#999";
+          ctx.font = "bold 15px sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText("✦  Scratch here to reveal your score  ✦", 160, 66);
+          ctx.font = "12px sans-serif";
+          ctx.fillText("(use mouse or finger)", 160, 88);
+          // Scratch logic
+          ctx.globalCompositeOperation = "destination-out";
+          var scratching = false;
+          var revealed = 0;
+          function scratchAt(x,y){
+            ctx.beginPath();
+            ctx.arc(x,y,28,0,Math.PI*2);
+            ctx.fill();
+            checkReveal();
+          }
+          function getPos(e){
+            var r = canvas.getBoundingClientRect();
+            if(e.touches) return {x:e.touches[0].clientX-r.left,y:e.touches[0].clientY-r.top};
+            return {x:e.clientX-r.left,y:e.clientY-r.top};
+          }
+          function checkReveal(){
+            var data = ctx.getImageData(0,0,320,140).data;
+            var total=0,clear=0;
+            for(var i=3;i<data.length;i+=4){total++;if(data[i]<128)clear++;}
+            if(clear/total>0.55 && !wrap.classList.contains("scratch-done")){
+              wrap.classList.add("scratch-done");
+              canvas.style.opacity="0";
+            }
+          }
+          canvas.addEventListener("mousedown",function(e){scratching=true;var p=getPos(e);scratchAt(p.x,p.y);});
+          canvas.addEventListener("mousemove",function(e){if(!scratching)return;var p=getPos(e);scratchAt(p.x,p.y);});
+          canvas.addEventListener("mouseup",function(){scratching=false;});
+          canvas.addEventListener("mouseleave",function(){scratching=false;});
+          canvas.addEventListener("touchstart",function(e){e.preventDefault();var p=getPos(e);scratchAt(p.x,p.y);},{passive:false});
+          canvas.addEventListener("touchmove",function(e){e.preventDefault();var p=getPos(e);scratchAt(p.x,p.y);},{passive:false});
+        })();
+        <\/script>`;
       }
 
       function showCertificate(overall, timeStr, queue) {
@@ -7726,6 +8347,8 @@
         document.getElementById("nextLevelBtn").style.display = "none";
         completedLevels = [];
         levelResults = {};
+        levelHints  = {};
+        levelScores = {};
         document.getElementById("level2Card").classList.add("locked");
         document.getElementById("level3Card").classList.add("locked");
         currentQuestion = 0;
