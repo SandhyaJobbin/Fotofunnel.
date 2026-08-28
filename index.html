@@ -7527,26 +7527,18 @@
               var qOverallPct = isCorrect ? "100%" : "0%";
 
               // Level score for this question
-              var l1s = "", l1p = "", l2s = "", l2p = "", l3s = "", l3p = "";
+              // Level Score = 10 if this question correct, 0 if wrong
+              // Level % = 100% if correct, 0% if wrong
+              // Only fill the column that matches the current question's level.
+              // Other level columns are blank ("·") for this row.
+              var l1s = "·", l1p = "·", l2s = "·", l2p = "·", l3s = "·", l3p = "·";
               if (lvl === 1) {
                 l1s = isCorrect ? 10 : 0;
                 l1p = isCorrect ? "100%" : "0%";
-                l2s = lv2pct !== "" ? (lv2pct >= 80 ? "Pass" : "Attempted") : "·";
-                l2p = lv2pct !== "" ? lv2pct + "%" : "·";
-                l3s = lv3pct !== "" ? (lv3pct >= 80 ? "Pass" : "Attempted") : "·";
-                l3p = lv3pct !== "" ? lv3pct + "%" : "·";
               } else if (lvl === 2) {
-                l1s = lv1pct !== "" ? (lv1pct >= 80 ? "Pass" : "Attempted") : "·";
-                l1p = lv1pct !== "" ? lv1pct + "%" : "·";
                 l2s = isCorrect ? 10 : 0;
                 l2p = isCorrect ? "100%" : "0%";
-                l3s = lv3pct !== "" ? (lv3pct >= 80 ? "Pass" : "Attempted") : "·";
-                l3p = lv3pct !== "" ? lv3pct + "%" : "·";
               } else if (lvl === 3) {
-                l1s = lv1pct !== "" ? (lv1pct >= 80 ? "Pass" : "Attempted") : "·";
-                l1p = lv1pct !== "" ? lv1pct + "%" : "·";
-                l2s = lv2pct !== "" ? (lv2pct >= 80 ? "Pass" : "Attempted") : "·";
-                l2p = lv2pct !== "" ? lv2pct + "%" : "·";
                 l3s = isCorrect ? 10 : 0;
                 l3p = isCorrect ? "100%" : "0%";
               }
